@@ -7,9 +7,9 @@ import { setUserLoginStatus } from "./action/userLoginStatusAction";
 function App() {
   const dispatch = useDispatch();
 
-  //if user
+  //when ever web restart get Jwt or login token
   useEffect(() => {
-    if (localStorage.getItem("loginStatus")) {
+    if (localStorage.getItem("loginToken")) {
       dispatch(setUserLoginStatus());
     }
   });

@@ -48,8 +48,9 @@ export const startLoginUser = (
           localStorage.setItem("loginToken", result.token);
           //change status of user
           dispatch(setUserLoginStatus());
-          onSubmitProps.resetForm();
           handleRedirect();
+          onSubmitProps.resetForm();
+          window.location.reload();
         }
       })
       .catch((error) => {

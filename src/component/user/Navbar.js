@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link, Switch, withRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { resetUserLoginStatus } from "../../action/userLoginStatusAction";
 import PublicRoute from "./PublicRoute";
@@ -48,15 +48,29 @@ function Navbar(props) {
                   Logout
                 </Link>
               </li>
+              <li>
+                <Link to="/customers"> Customer Details</Link>
+              </li>
+              <li>
+                <Link to="/products">Product</Link>
+              </li>
+              <li>
+                <Link to="/bill">Bill</Link>
+              </li>
+              <li>
+                <button>DarkMode</button>
+              </li>
             </>
           )}
         </ul>
       </div>
-      <PublicRoute path="/home" component={Home} exact={true} />
-      <PublicRoute path="/" component={Login} exact={true} />
-      <PublicRoute path="/sign-up" component={Signup} exact={true} />
-      <PrivateRoute path="/dashboard" component={Dashboard} exact={true} />
-      {/* <PrivateRoute path="/dashboard" component={Logou} exact={true} /> */}
+      <Switch>
+        <PublicRoute path="/home" component={Home} exact={true} />
+        <PublicRoute path="/" component={Login} exact={true} />
+        <PublicRoute path="/sign-up" component={Signup} exact={true} />
+        <PrivateRoute path="/dashboard" component={Dashboard} exact={true} />
+        {/* <PrivateRoute path="/dashboard" component={Logou} exact={true} /> */}
+      </Switch>
     </div>
   );
 }
