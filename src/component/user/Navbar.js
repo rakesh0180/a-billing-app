@@ -1,14 +1,17 @@
 import React from "react";
-import { Link, Switch, withRouter } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, Switch, withRouter } from "react-router-dom";
+import swal from "sweetalert";
 import { resetUserLoginStatus } from "../../action/userLoginStatusAction";
-import PublicRoute from "./PublicRoute";
-import PrivateRoute from "./PrivateRoute";
+import BillContainer from "../bill/BillContainer";
+import DashboardContainer from "../dashboard/DashboardContainer";
+import ProductContainer from "../product/ProductContainer";
 import Home from "./Home";
 import Login from "./Login";
+import PrivateRoute from "./PrivateRoute";
+import PublicRoute from "./PublicRoute";
 import Signup from "./Signup";
-import Dashboard from "../dashboard/Dashboard";
-import swal from "sweetalert";
+import UserDetails from "./UserDetails";
 
 function Navbar(props) {
   const dispatch = useDispatch();
@@ -33,16 +36,25 @@ function Navbar(props) {
             </>
           ) : (
             <>
-              <li>
+              <li className="bx bx-home-alt">
                 <Link to="/dashboard">Dashboard</Link>
               </li>
               <li>
                 <Link
                   onClick={() => {
-                    localStorage.removeItem("loginToken");
-                    swal("Successfully", "logged out", "success");
-                    dispatch(resetUserLoginStatus());
-                    props.history.push("/");
+                    swal({
+                      title: "Are you sure?",
+                      icon: "warning",
+                      buttons: ["Cancel", "Yes"],
+                      dangerMode: true,
+                    }).then((willLogout) => {
+                      if (willLogout) {
+                        localStorage.removeItem("loginToken");
+                        swal("Successfully", "logged out", "success");
+                        dispatch(resetUserLoginStatus());
+                        props.history.push("/");
+                      }
+                    });
                   }}
                 >
                   Logout
@@ -58,6 +70,9 @@ function Navbar(props) {
                 <Link to="/bill">Bill</Link>
               </li>
               <li>
+                <Link to="/user">User</Link>
+              </li>
+              <li>
                 <button>DarkMode</button>
               </li>
             </>
@@ -68,7 +83,18 @@ function Navbar(props) {
         <PublicRoute path="/home" component={Home} exact={true} />
         <PublicRoute path="/" component={Login} exact={true} />
         <PublicRoute path="/sign-up" component={Signup} exact={true} />
-        <PrivateRoute path="/dashboard" component={Dashboard} exact={true} />
+        <PrivateRoute
+          path="/dashboard"
+          component={DashboardContainer}
+          exact={true}
+        />
+        <PrivateRoute
+          path="/product"
+          component={ProductContainer}
+          exact={true}
+        />
+        <PrivateRoute path="/bill" component={BillContainer} exact={true} />
+        <PrivateRoute path="/user" component={UserDetails} exact={true} />
         {/* <PrivateRoute path="/dashboard" component={Logou} exact={true} /> */}
       </Switch>
     </div>

@@ -1,5 +1,4 @@
 import axios from "../AxiosConfig/axiosConfig";
-import swal from "sweetalert";
 
 export const startUserAccountGetDetails = () => {
   return (dispatch) => {
@@ -8,9 +7,17 @@ export const startUserAccountGetDetails = () => {
       .then((response) => {
         const result = response.data;
         console.log("userAccountDetails", result);
+        dispatch(addUserInfo(result));
       })
       .catch((error) => {
         console.log("userAccountDetails", error.message);
       });
+  };
+};
+
+export const addUserInfo = (data) => {
+  return {
+    type: "ADD_USER_INFO",
+    payload: data,
   };
 };

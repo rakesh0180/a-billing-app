@@ -4,7 +4,7 @@ const axios = Axios.create({
 });
 
 axios.defaults.headers.common["Authorization"] = `Bearer ${localStorage.getItem(
-  "token"
+  "loginToken"
 )}`;
 
 export default axios;
