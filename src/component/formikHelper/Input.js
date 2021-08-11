@@ -1,14 +1,24 @@
+import { ErrorMessage, Field } from "formik";
 import React from "react";
-import { Field, ErrorMessage } from "formik";
 import TextError from "./TextError";
 
 function Input(props) {
   const { label, name, placeholder, ...rest } = props;
   return (
-    <div className="form-control rounded-pill ">
+    <div className="form-group">
       <label htmlFor={name}>{label}</label>
-      <Field id={name} name={name} placeholder={placeholder} {...rest} />
-      <ErrorMessage component={TextError} name={name} />
+      <Field
+        className="form-control"
+        id={name}
+        name={name}
+        placeholder={placeholder}
+        {...rest}
+      />
+      <ErrorMessage
+        className="invalid-feedback"
+        component={TextError}
+        name={name}
+      />
     </div>
   );
 }

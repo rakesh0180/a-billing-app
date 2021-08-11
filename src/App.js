@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { setUserLoginStatus } from "./action/userLoginStatusAction";
 import "./App.css";
 import Navbar from "./component/user/Navbar";
-import { setUserLoginStatus } from "./action/userLoginStatusAction";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,8 +16,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Navbar /> */}
       <Navbar />
+      {/* <UserDetails /> */}
     </div>
   );
 }

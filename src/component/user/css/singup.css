@@ -10,18 +10,17 @@
   transition: all 0.3s;
 }
 
-.container {
+/* .container {
   background-image: url(../../../assets/img/login/bg-register-img.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
+} */
 
-label {
+/* label {
   font-weight: bold;
   display: flex;
-  /* margin-bottom: 0.2em; */
 }
 
 input + label {
@@ -45,13 +44,7 @@ select {
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
-  /* margin-bottom: 20px; */
-}
-
-.form-control {
-  margin-bottom: 5px;
-  border: none;
-}
+} */
 
 .error {
   color: red;
@@ -71,4 +64,34 @@ select {
   background: #0c85d0;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.card-img,
+.card-img-top,
+.card-img-bottom {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.card-img,
+.card-img-top {
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.card-img,
+.card-img-bottom {
+  border-bottom-right-radius: calc(0.25rem - 1px);
+  border-bottom-left-radius: calc(0.25rem - 1px);
+}
+
+html.dark-theme .form-control {
+  color: #c0c8d1;
+  background-color: #030b23;
+  border: 1px solid rgb(255 255 255 / 34%);
+}
+
+.form-group {
+  margin-bottom: 1rem;
 }
