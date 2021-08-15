@@ -2,8 +2,8 @@ import React from "react";
 
 function DashboardContainer() {
   return (
-    <div className="container">
-      <h1>Dashboard</h1>
+    <div className="container ">
+      <h4 className="text-center fw-bold">Dashboard</h4>
     </div>
   );
 }

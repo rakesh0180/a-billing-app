@@ -80,7 +80,7 @@ const SignUp = (props) => {
                           <div class="col-lg-6">
                             <div class="card-body p-md-5">
                               <div className="text-center">
-                                <h3 className="mt-4 font-weight-bold mb-3">
+                                <h3 className="mt-4 fw-bold mb-3">
                                   Create an Account
                                 </h3>
                               </div>

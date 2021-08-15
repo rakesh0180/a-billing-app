@@ -10,6 +10,7 @@ import Login from "./Login";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 import Signup from "./Signup";
+import UserDetails from "./UserDetails";
 
 function Navbar(props) {
   const dispatch = useDispatch();
@@ -22,7 +23,9 @@ function Navbar(props) {
         <header>
           <nav className="navbar navbar-expand-lg navbar-dark bg-secondary mb-5 shadow-sm radius-15">
             <div className="container-fluid">
-              <a className="navbar-brand text-uppercase ">Billing App</a>
+              <a className="navbar-brand text-uppercase fs-1 fw-bold ">
+                Billing App
+              </a>
               <button
                 className="navbar-toggler"
                 type="button"
@@ -70,7 +73,14 @@ function Navbar(props) {
                           Dashboard
                         </Link>
                       </li>
-                      <li className="nav-item"></li>
+                      <li className="nav-item">
+                        <Link
+                          className="nav-link text-uppercase py-0"
+                          to="/user"
+                        >
+                          User
+                        </Link>
+                      </li>
                       <li className="nav-item">
                         <Link
                           className="nav-link text-uppercase py-0"
@@ -101,6 +111,7 @@ function Navbar(props) {
           component={DashboardContainer}
           exact={true}
         />
+        <PrivateRoute path="/user" component={UserDetails} exact={true} />
       </Switch>
     </div>
   );
