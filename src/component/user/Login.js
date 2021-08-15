@@ -7,7 +7,7 @@ import * as Yup from "yup";
 import { startLoginUser } from "../../action/userLoginStatusAction";
 import FormikControl from "../formikHelper/FormikControl";
 import "./css/singup.css";
-import loginImage from "./image/login-frent-img.jpg";
+import loginImage from "./image/login.jpg";
 import Signup from "./Signup";
 const Login = (props) => {
   const [serverErrors, setServerErrors] = useState({});

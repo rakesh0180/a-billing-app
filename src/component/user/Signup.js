@@ -1,11 +1,12 @@
+import { Form, Formik } from "formik";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { Formik, Form } from "formik";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
-import FormikControl from "../formikHelper/FormikControl";
 import { startSignupUser } from "../../action/userLoginStatusAction";
+import FormikControl from "../formikHelper/FormikControl";
 import "./css/singup.css";
+import registerImage from "./image/register.jpg";
 
 const SignUp = (props) => {
   const dispatch = useDispatch();
@@ -46,8 +47,8 @@ const SignUp = (props) => {
   };
  */
   return (
-    <div className="container  ">
-      <div className="row register-form justify-content-center align-items-center">
+    <div className="container">
+      <div className="row row register-form justify-content-center align-items-center">
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -63,65 +64,93 @@ const SignUp = (props) => {
           {(formik) => {
             // console.log(formik);
             return (
-              <div className="form-group ">
-                <div className="text-center">
-                  <h3 className="mt-2 font-weight-bold mb-3">
-                    Create an Account
-                  </h3>
-                </div>
-                <Form>
-                  <FormikControl
-                    control="input"
-                    type="text"
-                    label="UserName"
-                    name="username"
-                    placeholder="Enter your name"
-                  />
-                  <FormikControl
-                    control="input"
-                    type="email"
-                    label="Email"
-                    name="email"
-                    placeholder="abc123@gmail.com"
-                  />
-                  <FormikControl
-                    control="input"
-                    type="password"
-                    label="Password"
-                    name="password"
-                    placeholder="enter the password"
-                  />
-                  <FormikControl
-                    control="input"
-                    type="text"
-                    label="Business Name"
-                    name="businessName"
-                    placeholder="enter the Business Name"
-                  />
-                  <FormikControl
-                    control="textarea"
-                    type="text"
-                    label="Address"
-                    name="address"
-                    place="enter the address"
-                  />
+              <div class="wrapper">
+                <div
+                  class="
+          section-authentication-register
+          d-flex
+          align-items-center
+          justify-content-center
+        "
+                >
+                  <div class="row">
+                    <div class="col-12 col-lg-10 mx-auto">
+                      <div class="card radius-15">
+                        <div class="row no-gutters">
+                          <div class="col-lg-6">
+                            <div class="card-body p-md-5">
+                              <div className="text-center">
+                                <h3 className="mt-4 font-weight-bold mb-3">
+                                  Create an Account
+                                </h3>
+                              </div>
+                              <Form>
+                                <FormikControl
+                                  control="input"
+                                  type="text"
+                                  label="UserName"
+                                  name="username"
+                                  placeholder="Enter your name"
+                                />
+                                <FormikControl
+                                  control="input"
+                                  type="email"
+                                  label="Email"
+                                  name="email"
+                                  placeholder="abc123@gmail.com"
+                                />
+                                <FormikControl
+                                  control="input"
+                                  type="password"
+                                  label="Password"
+                                  name="password"
+                                  placeholder="enter the password"
+                                />
+                                <FormikControl
+                                  control="input"
+                                  type="text"
+                                  label="Business Name"
+                                  name="businessName"
+                                  placeholder="enter the Business Name"
+                                />
+                                <FormikControl
+                                  control="textarea"
+                                  type="text"
+                                  label="Address"
+                                  name="address"
+                                  place="enter the address"
+                                />
 
-                  <button
-                    className=" btn btn-primary w-100 mt-3 radius-30"
-                    type="submit"
-                    disabled={!formik.isValid}
-                  >
-                    Submit
-                  </button>
+                                <button
+                                  className=" btn btn-primary w-100 mt-3 radius-30"
+                                  type="submit"
+                                  disabled={!formik.isValid}
+                                >
+                                  Submit
+                                </button>
 
-                  <hr />
-                  <div className="text-center mt-4">
-                    <p className="mb-0">
-                      Already have an account?
-                      <Link to="/">Log in</Link>
-                    </p>
+                                <hr />
+                                <div className="text-center mt-4">
+                                  <p className="mb-0">
+                                    Already have an account?
+                                    <Link to="/">Log in</Link>
+                                  </p>
+                                </div>
+                              </Form>
+                            </div>
+                          </div>
+                          <div class="col-lg-6">
+                            <img
+                              src={registerImage}
+                              class="card-img login-img h-100"
+                              alt="..."
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </Form>
+                </div>
               </div>
             );
           }}
