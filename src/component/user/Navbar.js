@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, Switch, withRouter } from "react-router-dom";
 import swal from "sweetalert";
 import { resetUserLoginStatus } from "../../action/userLoginStatusAction";
+import CustomerContainer from "../customer/CustomerContainer";
 import DashboardContainer from "../dashboard/DashboardContainer";
+import ProductContainer from "../product/ProductContainer";
 import Home from "./Home";
 import Login from "./Login";
 import PrivateRoute from "./PrivateRoute";
@@ -73,6 +75,23 @@ function Navbar(props) {
                           Dashboard
                         </Link>
                       </li>
+
+                      <li className="nav-item">
+                        <Link
+                          className="nav-link text-uppercase py-0"
+                          to="/customer"
+                        >
+                          customer
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link
+                          className="nav-link text-uppercase py-0"
+                          to="/product"
+                        >
+                          product
+                        </Link>
+                      </li>
                       <li className="nav-item">
                         <Link
                           className="nav-link text-uppercase py-0"
@@ -109,6 +128,16 @@ function Navbar(props) {
         <PrivateRoute
           path="/dashboard"
           component={DashboardContainer}
+          exact={true}
+        />
+        <PrivateRoute
+          path="/customer"
+          component={CustomerContainer}
+          exact={true}
+        />
+        <PrivateRoute
+          path="/product"
+          component={ProductContainer}
           exact={true}
         />
         <PrivateRoute path="/user" component={UserDetails} exact={true} />
