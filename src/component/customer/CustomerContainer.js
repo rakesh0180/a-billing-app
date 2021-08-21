@@ -2,8 +2,10 @@ import React from "react";
 
 function CustomerContainer() {
   return (
-    <div>
+    <div className="container">
       <h2>CustomerContainer</h2>
+      {/* <CustomerList />
+      <AddCustomer /> */}
     </div>
   );
 }
