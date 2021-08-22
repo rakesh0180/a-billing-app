@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="container-fluid con">
+      <div className="container-fluid">
         <Switch>
           <PublicRoute path="/home" component={Home} exact={true} />
           <PublicRoute path="/" component={Login} exact={true} />
@@ -51,7 +51,6 @@ function App() {
           <Redirect to="not-found" />
         </Switch>
       </div>
-      {/* <UserDetails /> */}
     </>
   );
 }
