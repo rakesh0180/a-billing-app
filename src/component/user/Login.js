@@ -99,18 +99,23 @@ const Login = (props) => {
                                 </div>
                               )}
 
-                              <button
-                                className=" btn btn-primary w-100 mt-3"
-                                type="submit"
-                                disabled={!formik.isValid}
-                              >
-                                Submit
-                              </button>
+                              <div className="text-center">
+                                <button
+                                  className=" btn btn-primary w-75 mt-3"
+                                  type="submit"
+                                  disabled={!formik.isValid}
+                                >
+                                  Submit
+                                </button>
+                              </div>
+
                               <hr />
                               <div className="text-center">
                                 <p className="mb-0">
-                                  Don't have an account?
-                                  <Link to="/sign-up">Register</Link>
+                                  Don't have an account? {""}
+                                  <Link to="/sign-up" className="text-primary">
+                                    Register
+                                  </Link>
                                 </p>
                               </div>
                             </Form>
