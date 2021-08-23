@@ -120,20 +120,23 @@ const SignUp = (props) => {
                                   name="address"
                                   place="enter the address"
                                 />
-
-                                <button
-                                  className=" btn btn-primary w-100 mt-3 radius-30"
-                                  type="submit"
-                                  disabled={!formik.isValid}
-                                >
-                                  Submit
-                                </button>
+                                <div className="text-center">
+                                  <button
+                                    className=" btn btn-primary w-75 mt-3 radius-30"
+                                    type="submit"
+                                    disabled={!formik.isValid}
+                                  >
+                                    Submit
+                                  </button>
+                                </div>
 
                                 <hr />
                                 <div className="text-center mt-4">
                                   <p className="mb-0">
-                                    Already have an account?
-                                    <Link to="/">Log in</Link>
+                                    Already have an account?{" "}
+                                    <Link to="/" className="text-primary">
+                                      Log in
+                                    </Link>
                                   </p>
                                 </div>
                               </Form>
