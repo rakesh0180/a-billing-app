@@ -1,6 +1,6 @@
 .register-form,
 .login-form {
-  margin: auto;
+  margin-top: 80px;
   width: fit-content;
   height: fit-content;
   background: #ffffff;
@@ -60,7 +60,7 @@ select {
 }
 .btn:hover {
   transform: 0;
-  -webkit-transform: scale(1.1);
+  -webkit-transform: scale(1.35);
   background: #0c85d0;
   text-transform: uppercase;
   cursor: pointer;

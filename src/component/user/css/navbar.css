@@ -14,3 +14,62 @@ body {
 .goog-te-banner-frame.skiptranslate {
   display: none !important;
 }
+
+/* Navbar */
+a:-webkit-any-link {
+  color: black;
+  padding: 1rem;
+}
+
+a:-webkit-any-link :hover {
+  color: white;
+  background-color: #673ab7;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 15%;
+  border: none;
+  cursor: pointer;
+}
+
+.brand {
+  transform: 0;
+  margin-left: 1rem;
+}
+
+.brand:hover {
+  transform: 0;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.navbar {
+  padding: 0;
+}
+
+a#navbarScrollingDropdown {
+  /* background-color: ; */
+  color: black;
+}
+
+a#navbarScrollingDropdown:hover {
+  color: white;
+  background-color: #673ab7;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 15%;
+  border: none;
+  cursor: pointer;
+}
+/*
+.bx {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ededed;
+  font-size: 26px;
+  border-radius: 10px;
+} */
