@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import * as nav from "react-bootstrap";
+import { RiBillLine } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import swal from "sweetalert";
@@ -17,16 +18,21 @@ function Navbar(props) {
       <nav.Navbar
         collapseOnSelect
         expand="lg"
-        bg="secondary"
-        variant="dark"
-        className="navbar shadow-sm radius-15"
+        bg="light"
+        variant="light"
+        className="justify-content-center radius-15 mb-5"
+        fixed="top"
       >
         <>
           <nav.Navbar.Brand>
             <Link
-              className="navbar-brand text-uppercase fs-1 fw-bold "
+              className="navbar-brand text-uppercase brand  fs-5 font-weight-bold "
               to="/home"
             >
+              <RiBillLine
+                style={{ color: "red" }}
+                className="bx-burst font-30 mr-1"
+              />
               Billing App
             </Link>
           </nav.Navbar.Brand>
@@ -36,52 +42,91 @@ function Navbar(props) {
             <nav.Nav className="ml-auto align-middle p-0 m-0">
               {!userLoginStatus ? (
                 <>
-                  <nav.Nav.Link>
-                    <Link to="/">Login</Link>
+                  <nav.Nav.Link className="nav-item">
+                    <Link to="/">
+                      <i className="bx bx-log-in-circle bx-fade-right-hover mr-1"></i>
+                      Login
+                    </Link>
                   </nav.Nav.Link>
-                  <nav.Nav.Link>
-                    <Link to="/home">Home</Link>
+                  <nav.Nav.Link className="nav-item">
+                    <Link to="/home">
+                      <i className="bx bx-home bx-burst-hover mr-1"> </i>
+                      Home
+                    </Link>
                   </nav.Nav.Link>
-                  <nav.Nav.Link>
-                    <Link to="/sign-up">Register</Link>
+                  <nav.Nav.Link className="nav-item">
+                    <Link to="/sign-up">
+                      <i className="bx bx-registered mr-1"> </i>
+                      Register
+                    </Link>
                   </nav.Nav.Link>
                 </>
               ) : (
                 <>
-                  <nav.Nav.Link>
+                  <nav.Nav.Link
+                  // className="nav-item secondary border-0 "
+                  // data-toggle="tooltip"
+                  // data-placement="bottom"
+                  // title="Dashboard"
+                  >
                     <Link to="/dashboard">Dashboard</Link>
                   </nav.Nav.Link>
 
-                  <nav.Nav.Link>
+                  <nav.Nav.Link className="nav-item">
                     <Link to="/customer">customer</Link>
                   </nav.Nav.Link>
-                  <nav.Nav.Link>
+
+                  <nav.Nav.Link className="nav-item">
                     <Link to="/product">product</Link>
                   </nav.Nav.Link>
-                  <nav.Nav.Link>
-                    <Link to="/user">
-                      <div>
-                        <i
-                          class="fa-solid fa-user"
-                          style={{ fontSize: "1rem" }}
-                        ></i>
+
+                  <nav.Nav.Link className="nav-item"></nav.Nav.Link>
+
+                  <nav.NavDropdown
+                    title="Profile"
+                    id="navbarScrollingDropdown"
+                    className="dropdown-menu-right "
+                    // class="nav-link dropdown-toggle"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <nav.NavDropdown.Item>
+                      <Link to="/user">
+                        <i className="bx bx-user bx-tada-hover mr-1 "></i>
                         User
-                      </div>
-                    </Link>
-                  </nav.Nav.Link>
-                  <nav.Nav.Link>
-                    <Link
-                      onClick={() => {
-                        localStorage.removeItem("loginToken");
-                        swal("Successfully", "logged out", "success");
-                        dispatch(resetUserLoginStatus());
-                        props.history.push("/");
-                      }}
-                    >
-                      Logout
-                    </Link>
-                  </nav.Nav.Link>
-                  <nav.Nav.Link>
+                      </Link>
+                    </nav.NavDropdown.Item>
+
+                    <nav.NavDropdown.Item>
+                      <Link
+                        onClick={() => {
+                          localStorage.removeItem("loginToken");
+                          swal("Successfully", "logged out", "success");
+                          dispatch(resetUserLoginStatus());
+                          props.history.push("/");
+                        }}
+                      >
+                        <i className="bx bx-log-out-circle bx-fade-left-hover mr-1"></i>
+                        Logout
+                      </Link>
+                    </nav.NavDropdown.Item>
+
+                    <nav.NavDropdown.Item>
+                      <Link to="/user">
+                        <i className="bx bx-user bx-tada-hover mr-1 "></i>
+                        darkMode
+                      </Link>
+                    </nav.NavDropdown.Item>
+
+                    <nav.NavDropdown.Divider />
+                    <nav.NavDropdown.Item>
+                      Something else here
+                    </nav.NavDropdown.Item>
+                  </nav.NavDropdown>
+
+                  <nav.Nav.Link className="nav-item">
                     <div id="google_translate_element"></div>
                   </nav.Nav.Link>
                 </>
