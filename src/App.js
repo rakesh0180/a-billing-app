@@ -22,12 +22,12 @@ function App() {
     if (localStorage.getItem("loginToken")) {
       dispatch(setUserLoginStatus());
     }
-  });
+  }, []);
 
   return (
     <>
       <Navbar />
-      <div className="container-fluid">
+      <div className="container-fluid pt-3">
         <Switch>
           <PublicRoute path="/home" component={Home} exact={true} />
           <PublicRoute path="/" component={Login} exact={true} />
