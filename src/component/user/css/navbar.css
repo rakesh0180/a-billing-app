@@ -23,6 +23,7 @@ a:-webkit-any-link {
 
 a:-webkit-any-link :hover {
   color: white;
+  font-size: 1rem;
   background-color: #673ab7;
   text-decoration: none;
   text-transform: uppercase;
@@ -35,10 +36,12 @@ a:-webkit-any-link :hover {
 .brand {
   transform: 0;
   margin-left: 1rem;
+  -webkit-transition: all 0.5s ease-in-out;
 }
 
 .brand:hover {
   transform: 0;
+  -webkit-transform: scale(1.35);
   margin-left: 1rem;
   cursor: pointer;
 }

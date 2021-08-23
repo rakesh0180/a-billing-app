@@ -58,11 +58,11 @@ const Login = (props) => {
                 class="
           section-authentication-login
           d-flex
-          align-items-center
           justify-content-center
+          align-items-center
         "
               >
-                <div class="row">
+                <div class="row ">
                   <div class="col-12 col-lg-10 mx-auto">
                     <div class="card radius-15">
                       <div class="row no-gutters">
