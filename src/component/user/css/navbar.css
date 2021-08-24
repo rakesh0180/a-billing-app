@@ -23,7 +23,6 @@ a:-webkit-any-link {
 
 a:-webkit-any-link :hover {
   color: white;
-  font-size: 1rem;
   background-color: #673ab7;
   text-decoration: none;
   text-transform: uppercase;
@@ -64,6 +63,31 @@ a#navbarScrollingDropdown:hover {
   border-radius: 15%;
   border: none;
   cursor: pointer;
+}
+
+div#google_translate_element {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.goog-te-combo,
+.goog-te-banner *,
+.goog-te-ftab *,
+.goog-te-menu *,
+.goog-te-menu2 *,
+.goog-te-balloon * {
+  font-family: -apple-system;
+  font-size: 16px;
+  padding: 0.3rem;
+}
+
+.goog-te-gadget .goog-te-combo {
+  margin: 2px 0;
+  font-size: 16px;
+  background-color: #f8f9fa;
+  border: none;
+  border-radius: 15%;
 }
 /*
 .bx {

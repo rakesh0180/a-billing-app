@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="container-fluid pt-3">
+      <div className="container-fluid con pt-3">
         <Switch>
           <PublicRoute path="/home" component={Home} exact={true} />
           <PublicRoute path="/" component={Login} exact={true} />

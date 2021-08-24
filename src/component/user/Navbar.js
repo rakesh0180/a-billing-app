@@ -1,17 +1,37 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useEffect } from "react";
 import * as nav from "react-bootstrap";
+import { FaProductHunt, FaUsers } from "react-icons/fa";
+import { IoLanguage } from "react-icons/io5";
 import { RiBillLine } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, withRouter } from "react-router-dom";
+import { Link, Redirect, Switch, withRouter } from "react-router-dom";
 import swal from "sweetalert";
+import { startUserAccountGetDetails } from "../../action/userAccountDetailsAction";
 import { resetUserLoginStatus } from "../../action/userLoginStatusAction";
+import CustomerContainer from "../customer/CustomerContainer";
+import DashboardContainer from "../dashboard/DashboardContainer";
+import ProductContainer from "../product/ProductContainer";
 import "./css/navbar.css";
+import Home from "./Home";
+import Login from "./Login";
+import PrivateRoute from "./PrivateRoute";
+import PublicRoute from "./PublicRoute";
+import Signup from "./Signup";
+import UserDetails from "./UserDetails";
 
 function Navbar(props) {
   const dispatch = useDispatch();
+  // get user details
+  const userInfo = useSelector((state) => state.userAccountInfo);
+  useEffect(() => {
+    dispatch(startUserAccountGetDetails());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  //
 
   const userLoginStatus = useSelector((state) => state.userLoginStatus);
+  const color = { color: "red" };
 
   return (
     <div>
@@ -29,10 +49,7 @@ function Navbar(props) {
               className="navbar-brand text-uppercase brand  fs-5 font-weight-bold "
               to="/home"
             >
-              <RiBillLine
-                style={{ color: "red" }}
-                className="bx-burst font-30 mr-1"
-              />
+              <RiBillLine style={color} className="bx-burst  bx-fw font-30 " />
               Billing App
             </Link>
           </nav.Navbar.Brand>
@@ -44,19 +61,19 @@ function Navbar(props) {
                 <>
                   <nav.Nav.Link className="nav-item">
                     <Link to="/">
-                      <i className="bx bx-log-in-circle bx-fade-right-hover mr-1"></i>
+                      <i className="bx bx-fw bxs-right-arrow-circle bx-fade-right-hover "></i>
                       Login
                     </Link>
                   </nav.Nav.Link>
                   <nav.Nav.Link className="nav-item">
                     <Link to="/home">
-                      <i className="bx bx-home bx-burst-hover mr-1"> </i>
+                      <i className="bx bx-fw bx-home bx-burst-hover "> </i>
                       Home
                     </Link>
                   </nav.Nav.Link>
                   <nav.Nav.Link className="nav-item">
                     <Link to="/sign-up">
-                      <i className="bx bx-registered mr-1"> </i>
+                      <i className="bx bx-fw bx-registered"> </i>
                       Register
                     </Link>
                   </nav.Nav.Link>
@@ -69,15 +86,33 @@ function Navbar(props) {
                   // data-placement="bottom"
                   // title="Dashboard"
                   >
-                    <Link to="/dashboard">Dashboard</Link>
+                    <Link to="/dashboard">
+                      <i
+                        className="bx bx-fw bxs-dashboard  "
+                        style={{ color: "#AA96DA" }}
+                      ></i>
+                      Dashboard
+                    </Link>
                   </nav.Nav.Link>
 
                   <nav.Nav.Link className="nav-item">
-                    <Link to="/customer">customer</Link>
+                    <Link to="/customer">
+                      <FaUsers
+                        className="bx bx-fw  "
+                        style={{ color: "#ff007c" }}
+                      ></FaUsers>
+                      customer
+                    </Link>
                   </nav.Nav.Link>
 
                   <nav.Nav.Link className="nav-item">
-                    <Link to="/product">product</Link>
+                    <Link to="/product">
+                      <FaProductHunt
+                        className="bx bx-fw   "
+                        style={{ color: "#6A2C70" }}
+                      ></FaProductHunt>
+                      product
+                    </Link>
                   </nav.Nav.Link>
 
                   <nav.Nav.Link className="nav-item"></nav.Nav.Link>
@@ -94,7 +129,7 @@ function Navbar(props) {
                   >
                     <nav.NavDropdown.Item>
                       <Link to="/user">
-                        <i className="bx bx-user bx-tada-hover mr-1 "></i>
+                        <i className="bx bx-fw bx-user bx-tada-hover  "></i>
                         User
                       </Link>
                     </nav.NavDropdown.Item>
@@ -108,26 +143,30 @@ function Navbar(props) {
                           props.history.push("/");
                         }}
                       >
-                        <i className="bx bx-log-out-circle bx-fade-left-hover mr-1"></i>
+                        <i className="bx bx-fw bxs-left-arrow-circle bx-fade-left-hover  font-24 "></i>
                         Logout
                       </Link>
                     </nav.NavDropdown.Item>
 
                     <nav.NavDropdown.Item>
-                      <Link to="/user">
-                        <i className="bx bx-user bx-tada-hover mr-1 "></i>
-                        darkMode
+                      <Link to="/dashboard">
+                        <i
+                          className="bx bx-fw bxs-dashboard  "
+                          style={{ color: "#AA96DA" }}
+                        ></i>
+                        Dashboard
                       </Link>
-                    </nav.NavDropdown.Item>
-
-                    <nav.NavDropdown.Divider />
-                    <nav.NavDropdown.Item>
-                      Something else here
                     </nav.NavDropdown.Item>
                   </nav.NavDropdown>
 
                   <nav.Nav.Link className="nav-item">
-                    <div id="google_translate_element"></div>
+                    <div>
+                      <IoLanguage
+                        className="bx bx-fw "
+                        style={{ color: "#ff8b01" }}
+                      ></IoLanguage>
+                      <div id="google_translate_element"></div>
+                    </div>
                   </nav.Nav.Link>
                 </>
               )}
@@ -136,7 +175,7 @@ function Navbar(props) {
         </>
       </nav.Navbar>
 
-      {/* <Switch>
+      <Switch>
         <PublicRoute path="/home" component={Home} exact={true} />
         <PublicRoute path="/" component={Login} exact={true} />
         <PublicRoute path="/sign-up" component={Signup} exact={true} />
@@ -157,7 +196,7 @@ function Navbar(props) {
         />
         <PrivateRoute path="/user" component={UserDetails} exact={true} />
         <Redirect to="not-found" />
-      </Switch> */}
+      </Switch>
     </div>
   );
 }

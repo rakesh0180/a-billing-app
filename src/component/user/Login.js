@@ -121,7 +121,7 @@ const Login = (props) => {
                             </Form>
                           </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div className="col-lg-6">
                           <img
                             src={loginImage}
                             className="card-img login-img h-100"
