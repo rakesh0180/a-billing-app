@@ -4,13 +4,15 @@ const userAccountInfoReducer = (
   action
 ) => {
   switch (action.type) {
-    case "ADD_USER_INFO":
+    case "ADD_USER_INFO": {
       return {
         ...state,
         ...action.payload,
       };
-    default:
+    }
+    default: {
       return { ...state };
+    }
   }
 };
 export default userAccountInfoReducer;

@@ -23,7 +23,7 @@ a:-webkit-any-link {
 
 a:-webkit-any-link :hover {
   color: white;
-  background-color: #673ab7;
+  background-color: #4188ff;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
@@ -56,7 +56,7 @@ a#navbarScrollingDropdown {
 
 a#navbarScrollingDropdown:hover {
   color: white;
-  background-color: #673ab7;
+  background-color: #4188ff;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
@@ -100,3 +100,12 @@ div#google_translate_element {
   font-size: 26px;
   border-radius: 10px;
 } */
+a#navbarScrollingDropdown {
+  /* padding: 16px; */
+  margin-left: 1rem;
+  width: max-content;
+}
+
+a.nav-item.nav-link {
+  width: fit-content;
+}

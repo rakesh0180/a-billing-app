@@ -52,16 +52,16 @@ select {
 
 /* button */
 .btn {
-  background: #1da0f2;
+  background: #4188ff;
   box-shadow: 0 0 1px #ccc;
   -webkit-transition: all 0.5s ease-in-out;
-  border: none;
+  /* border: none; */
   color: #fff;
 }
 .btn:hover {
   transform: 0;
   -webkit-transform: scale(1.35);
-  background: #0c85d0;
+  background: #4242ff;
   text-transform: uppercase;
   cursor: pointer;
 }

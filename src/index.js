@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import configStore from "./store/configStore";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
+import configStore from "./store/configStore";
 
 const store = configStore();
+
+console.log("initial store", store.getState());
 
 store.subscribe(() => {
   console.log("store", store.getState());

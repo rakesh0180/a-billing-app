@@ -1,11 +1,42 @@
-import React from 'react'
+import React from "react";
+import { useDispatch } from "react-redux";
+import swal from "sweetalert";
+import { startRemoveCustomer } from "../../action/customerAction";
 
-function RemoveCustomer() {
-    return (
-        <div>
-           <h2>remove customer</h2>
-        </div>
-    )
+function RemoveCustomer(props) {
+  const dispatch = useDispatch();
+  const { id } = props;
+  const removeCustomer = (id) => {
+    swal("Are you sure?", "You want to delete the customer.", "warning", {
+      buttons: {
+        yes: {
+          text: "Confirm",
+          value: "yes",
+        },
+        no: {
+          text: "Cancel",
+          value: "no",
+        },
+      },
+    }).then((value) => {
+      if (value === "yes") {
+        dispatch(startRemoveCustomer(id));
+      }
+      return false;
+    });
+  };
+
+  return (
+    <button
+      className="btn"
+      onClick={() => {
+        removeCustomer(id);
+      }}
+    >
+      <i class="bx bxs-trash " style={{ color: "red" }}></i>
+      Delete
+    </button>
+  );
 }
 
-export default RemoveCustomer
+export default RemoveCustomer;

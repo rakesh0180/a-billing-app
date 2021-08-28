@@ -1,5 +1,5 @@
-import axios from "../AxiosConfig/axiosConfig";
 import swal from "sweetalert";
+import axios from "../AxiosConfig/axiosConfig";
 
 //Register
 export const startSignupUser = (signupData, handleRedirect, onSubmitProps) => {
@@ -48,6 +48,11 @@ export const startLoginUser = (
           localStorage.setItem("loginToken", result.token);
           //change status of user
           dispatch(setUserLoginStatus());
+          dispatch(startGetUserDetails());
+          // dispatch(startGetAllCustomers());
+          // dispatch(startGetAllProducts());
+          // dispatch(startGetAllBills());
+
           handleRedirect();
           onSubmitProps.resetForm();
           window.location.reload();

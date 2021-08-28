@@ -1,34 +1,33 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect } from "react";
+import React from "react";
 import * as nav from "react-bootstrap";
 import { FaProductHunt, FaUsers } from "react-icons/fa";
 import { IoLanguage } from "react-icons/io5";
 import { RiBillLine } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Redirect, Switch, withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import swal from "sweetalert";
-import { startUserAccountGetDetails } from "../../action/userAccountDetailsAction";
+// import { startUserAccountGetDetails } from "../../action/userAccountDetailsAction";
 import { resetUserLoginStatus } from "../../action/userLoginStatusAction";
-import CustomerContainer from "../customer/CustomerContainer";
-import DashboardContainer from "../dashboard/DashboardContainer";
-import ProductContainer from "../product/ProductContainer";
+// import CustomerContainer from "../customer/CustomerContainer";
+// import DashboardContainer from "../dashboard/DashboardContainer";
+// import ProductContainer from "../product/ProductContainer";
 import "./css/navbar.css";
-import Home from "./Home";
-import Login from "./Login";
-import PrivateRoute from "./PrivateRoute";
-import PublicRoute from "./PublicRoute";
-import Signup from "./Signup";
-import UserDetails from "./UserDetails";
+// import Home from "./Home";
+// import Login from "./Login";
+// import PrivateRoute from "./PrivateRoute";
+// import PublicRoute from "./PublicRoute";
+// import Signup from "./Signup";
+// import UserDetails from "./UserDetails";
 
 function Navbar(props) {
   const dispatch = useDispatch();
   // get user details
-  const userInfo = useSelector((state) => state.userAccountInfo);
-  useEffect(() => {
-    dispatch(startUserAccountGetDetails());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  //
+  // const userInfo = useSelector((state) => state.userAccountInfo);
+  // useEffect(() => {
+  //   dispatch(startUserAccountGetDetails());
+  // }, []);
+  // //
 
   const userLoginStatus = useSelector((state) => state.userLoginStatus);
   const color = { color: "red" };
@@ -115,7 +114,7 @@ function Navbar(props) {
                     </Link>
                   </nav.Nav.Link>
 
-                  <nav.Nav.Link className="nav-item"></nav.Nav.Link>
+                  {/* <nav.Nav.Link className="nav-item"></nav.Nav.Link> */}
 
                   <nav.NavDropdown
                     title="Profile"
@@ -175,7 +174,7 @@ function Navbar(props) {
         </>
       </nav.Navbar>
 
-      <Switch>
+      {/* <Switch>
         <PublicRoute path="/home" component={Home} exact={true} />
         <PublicRoute path="/" component={Login} exact={true} />
         <PublicRoute path="/sign-up" component={Signup} exact={true} />
@@ -196,7 +195,7 @@ function Navbar(props) {
         />
         <PrivateRoute path="/user" component={UserDetails} exact={true} />
         <Redirect to="not-found" />
-      </Switch>
+      </Switch>*/}
     </div>
   );
 }

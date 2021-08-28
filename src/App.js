@@ -22,12 +22,13 @@ function App() {
     if (localStorage.getItem("loginToken")) {
       dispatch(setUserLoginStatus());
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <>
       <Navbar />
-      <div className="container-fluid con pt-3">
+      <div className="container-fluid container-fluid-sm con pt-3">
         <Switch>
           <PublicRoute path="/home" component={Home} exact={true} />
           <PublicRoute path="/" component={Login} exact={true} />
