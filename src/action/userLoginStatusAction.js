@@ -48,7 +48,7 @@ export const startLoginUser = (
           localStorage.setItem("loginToken", result.token);
           //change status of user
           dispatch(setUserLoginStatus());
-          dispatch(startGetUserDetails());
+          // dispatch(startGetUserDetails());
           // dispatch(startGetAllCustomers());
           // dispatch(startGetAllProducts());
           // dispatch(startGetAllBills());

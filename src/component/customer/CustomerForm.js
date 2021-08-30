@@ -39,7 +39,7 @@ function CustomerForm() {
                 <h3 className="mt-3 fw-bold mb-3">Add Customer</h3>
               </div>
               <div>
-                <Form>
+                <Form className="form-inline">
                   <FormikControl
                     control="input"
                     type="text"
