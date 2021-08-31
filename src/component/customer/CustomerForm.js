@@ -6,7 +6,7 @@ import { startAddCustomer } from "../../action/customerAction";
 import FormikControl from "../formikHelper/FormikControl";
 import "./css/customer.css";
 
-function CustomerForm() {
+function CustomerForm(props) {
   const dispatch = useDispatch();
 
   const initialValues = {
@@ -39,7 +39,7 @@ function CustomerForm() {
                 <h3 className="mt-3 fw-bold mb-3">Add Customer</h3>
               </div>
               <div>
-                <Form className="form-inline">
+                <Form>
                   <FormikControl
                     control="input"
                     type="text"

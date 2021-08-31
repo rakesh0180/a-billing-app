@@ -28,12 +28,12 @@ function RemoveCustomer(props) {
 
   return (
     <button
-      className="btn"
+      className="btn btn-danger"
       onClick={() => {
         removeCustomer(id);
       }}
     >
-      <i class="bx bxs-trash " style={{ color: "red" }}></i>
+      <i className="bx bxs-trash " style={{ color: "red" }}></i>
       Delete
     </button>
   );

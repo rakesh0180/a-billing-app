@@ -17,7 +17,7 @@ function CustomerItem(props) {
       <td>{customer.email}</td>
       <td>
         <button className="btn" onClick={handleModelShowToggle}>
-          <i class="bx bxs-edit mr-2  " style={{ color: "red" }}></i>Edit
+          <i className="bx bxs-edit mr-2  " style={{ color: "red" }}></i>Edit
         </button>
       </td>
       <td>

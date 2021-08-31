@@ -114,9 +114,38 @@ function Navbar(props) {
                     </Link>
                   </nav.Nav.Link>
 
+                  <nav.Nav.Link className="nav-item">
+                    <Link to="/user">
+                      <i className="bx bx-fw bx-user bx-tada-hover  "></i>
+                      User
+                    </Link>
+                  </nav.Nav.Link>
+                  <nav.Nav.Link className="nav-item">
+                    <Link
+                      onClick={() => {
+                        localStorage.removeItem("loginToken");
+                        swal("Successfully", "logged out", "success");
+                        dispatch(resetUserLoginStatus());
+                        props.history.push("/");
+                      }}
+                    >
+                      <i className="bx bx-fw bxs-left-arrow-circle bx-fade-left-hover  font-24 "></i>
+                      Logout
+                    </Link>
+                  </nav.Nav.Link>
+                  <nav.Nav.Link className="nav-item">
+                    <div>
+                      <IoLanguage
+                        className="bx bx-fw "
+                        style={{ color: "#ff8b01" }}
+                      ></IoLanguage>
+                      <div id="google_translate_element"></div>
+                    </div>
+                  </nav.Nav.Link>
+
                   {/* <nav.Nav.Link className="nav-item"></nav.Nav.Link> */}
 
-                  <nav.NavDropdown
+                  {/* <nav.NavDropdown
                     title="Profile"
                     id="navbarScrollingDropdown"
                     className="dropdown-menu-right "
@@ -156,17 +185,7 @@ function Navbar(props) {
                         Dashboard
                       </Link>
                     </nav.NavDropdown.Item>
-                  </nav.NavDropdown>
-
-                  <nav.Nav.Link className="nav-item">
-                    <div>
-                      <IoLanguage
-                        className="bx bx-fw "
-                        style={{ color: "#ff8b01" }}
-                      ></IoLanguage>
-                      <div id="google_translate_element"></div>
-                    </div>
-                  </nav.Nav.Link>
+                  </nav.NavDropdown> */}
                 </>
               )}
             </nav.Nav>
