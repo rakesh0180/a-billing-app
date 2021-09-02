@@ -56,22 +56,16 @@ function CustomerForm(props) {
                     type="text"
                     label="Name"
                     name="name"
-                    placeholder="Enter your Name"
+                    placeholder="Enter Product Name"
                   />
                   <FormikControl
                     control="input"
                     type="text"
-                    label="Mobile"
-                    name="mobile"
-                    placeholder="Enter your Name"
+                    label="Price"
+                    name="price"
+                    placeholder="Enter Product Price"
                   />
-                  <FormikControl
-                    control="input"
-                    type="text"
-                    label="Email"
-                    name="email"
-                    placeholder="Enter your Name"
-                  />
+
                   <Modal.Footer>
                     <button className="btn btn-primary mr-5" type="submit">
                       Update
@@ -113,22 +107,16 @@ function CustomerForm(props) {
                           type="text"
                           label="Name"
                           name="name"
-                          placeholder="Enter your Name"
+                          placeholder="Enter Product Name"
                         />
                         <FormikControl
                           control="input"
                           type="text"
-                          label="Mobile Number"
-                          name="mobile"
-                          placeholder="Enter your Mobile Number"
+                          label="Price"
+                          name="price"
+                          placeholder="Enter Product Price"
                         />
-                        <FormikControl
-                          control="input"
-                          type="text"
-                          label="Email"
-                          name="email"
-                          placeholder="Enter your Email"
-                        />
+
                         <div className="text-center">
                           <button
                             className=" btn btn-primary w-75 mt-3 radius-30"

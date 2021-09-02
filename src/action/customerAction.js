@@ -8,6 +8,13 @@ export const addCustomer = (customer) => {
   };
 };
 
+export const updateCustomer = (updateData) => {
+  return {
+    type: "UPDATE_CUSTOMER",
+    payload: updateData,
+  };
+};
+
 export const removeCustomer = (id) => {
   return {
     type: "REMOVE_CUSTOMER",
@@ -28,12 +35,31 @@ export const startAddCustomer = (customerData, onSubmitProps) => {
       const response = await axios.post(`/customers`, customerData);
       const result = response.data;
       console.log("customers", result);
-      console.log(typeof result);
+      // console.log(typeof result);
       if (result.hasOwnProperty("error")) {
         swal("Error", result.error, "error");
       } else {
         swal("Successfully", "Added customer", "success");
         dispatch(addCustomer(result));
+        onSubmitProps.resetForm();
+      }
+    } catch (error) {
+      swal("Error", "error in data", "error");
+    }
+  };
+};
+
+export const startUpdateCustomer = (id, customerUpdateData, onSubmitProps) => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.put(`/customers/${id}`, customerUpdateData);
+      const result = response.data;
+      console.log("customerUpdate", result);
+      if (result.hasOwnProperty("error")) {
+        swal("Error", result.error, "error");
+      } else {
+        swal("Successfully", "Added customer", "success");
+        dispatch(updateCustomer(result));
         onSubmitProps.resetForm();
       }
     } catch (error) {
@@ -60,29 +86,7 @@ export const startRemoveCustomer = (id) => {
   };
 };
 
-// export const startAddCustomer = (customerData, onSubmitProps) => {
-//   return (dispatch) => {
-//     axios
-//       .post(`/customers`, customerData)
-//       .then((response) => {
-//         const result = response.data;
-//         console.log("customers", result);
-//         console.log(typeof result);
-//         if (result.hasOwnProperty("error")) {
-//           swal("Error", result.error, "error");
-//         } else {
-//           swal("Successfully", "Added customer", "success");
-//           dispatch(addCustomer(result));
-//           onSubmitProps.resetForm();
-//         }
-//       })
-//       .catch((error) => {
-//         swal("Error", "error in data", "error");
-//       });
-//   };
-// };
-
-export const startGetCustomers = () => {
+export const startGetAllCustomers = () => {
   return async (dispatch) => {
     try {
       const response = await axios.get(`/customers`);

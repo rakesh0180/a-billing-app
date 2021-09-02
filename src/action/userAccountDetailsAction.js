@@ -1,6 +1,6 @@
 import axios from "../AxiosConfig/axiosConfig";
 
-export const startUserAccountGetDetails = () => {
+export const startGetUserAccountDetails = () => {
   return (dispatch) => {
     axios
       .get("/users/account")

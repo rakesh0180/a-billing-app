@@ -1,4 +1,6 @@
 import swal from "sweetalert";
+import { startGetAllCustomers } from "../action/customerAction";
+import { startGetUserAccountDetails } from "../action/userAccountDetailsAction";
 import axios from "../AxiosConfig/axiosConfig";
 
 //Register
@@ -48,8 +50,8 @@ export const startLoginUser = (
           localStorage.setItem("loginToken", result.token);
           //change status of user
           dispatch(setUserLoginStatus());
-          // dispatch(startGetUserDetails());
-          // dispatch(startGetAllCustomers());
+          dispatch(startGetUserAccountDetails());
+          dispatch(startGetAllCustomers());
           // dispatch(startGetAllProducts());
           // dispatch(startGetAllBills());
 

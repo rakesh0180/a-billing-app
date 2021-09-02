@@ -5,7 +5,7 @@ const customersReducer = (state = customersInitialState, action) => {
       return [...state, { ...action.payload }];
     }
 
-    case "EDIT_CUSTOMER": {
+    case "UPDATE_CUSTOMER": {
       return state.filter((customer) => {
         return customer.id !== action.payload;
       });
@@ -26,7 +26,7 @@ const customersReducer = (state = customersInitialState, action) => {
       });
     }
 
-    case "READ_CUSTOMER_LIST": {
+    case "GET_ALL_CUSTOMERS": {
       return [...action.payload];
     }
 

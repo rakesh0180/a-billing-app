@@ -1,17 +1,10 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { startUserAccountGetDetails } from "../../action/userAccountDetailsAction";
+import { useSelector } from "react-redux";
 import "./css/userDetails.css";
 import user from "./image/user.png";
 
 function UserDetails() {
-  const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.userAccountInfo);
-  useEffect(() => {
-    // const loginToken = localStorage.getItem("loginToken");
-    dispatch(startUserAccountGetDetails());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+
   console.log("userAccountDetails", userInfo);
   return (
     <div className="container">
