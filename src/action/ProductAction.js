@@ -4,7 +4,7 @@ import axios from "../AxiosConfig/axiosConfig";
 export const startAddProduct = (productData, onSubmitProps) => {
   return async (dispatch) => {
     try {
-      const response = await axios.post("/api/products", productData);
+      const response = await axios.post("/products", productData);
       const result = response.data;
       console.log("Product", result);
       if (result.hasOwnProperty("error")) {
@@ -57,7 +57,7 @@ export const startRemoveProduct = (id) => {
 export const startGetAllProducts = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get("/api/products");
+      const response = await axios.get("/products");
       const result = response.data;
       console.log("ProductList", result);
       if (result.hasOwnProperty("error")) {

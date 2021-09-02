@@ -4,27 +4,22 @@ import { Modal } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import {
-  startAddCustomer,
-  startUpdateCustomer,
-} from "../../action/customerAction";
+  startAddProduct,
+  startUpdateProduct,
+} from "../../action/ProductAction";
 import FormikControl from "../formikHelper/FormikControl";
-import "./css/customer.css";
 
 function CustomerForm(props) {
-  const { formType, onHide, customer } = props;
+  const { formType, onHide, product } = props;
   const dispatch = useDispatch();
 
   const initialValues = {
     name: "",
-    mobile: "",
-    email: "",
+    price: "",
   };
   const validationSchema = Yup.object({
     name: Yup.string().required("Name is required"),
-    mobile: Yup.string()
-      .min(10, "less then 10 digits")
-      .max(10, "more then 10 digits")
-      .required("mobile number is required"),
+    price: Yup.string().required("Price is required"),
   });
   return (
     <>
@@ -32,16 +27,15 @@ function CustomerForm(props) {
         <div>
           <Formik
             initialValues={{
-              name: customer.name,
-              mobile: customer.mobile,
-              email: customer.email,
+              name: product.name,
+              price: product.price,
             }}
             validationSchema={validationSchema}
-            onSubmit={(customerUpdateData, onSubmitProps) => {
+            onSubmit={(productUpdateData, onSubmitProps) => {
               dispatch(
-                startUpdateCustomer(
-                  customer._id,
-                  customerUpdateData,
+                startUpdateProduct(
+                  product._id,
+                  productUpdateData,
                   onSubmitProps
                 )
               );
@@ -91,14 +85,14 @@ function CustomerForm(props) {
               validationSchema={validationSchema}
               onSubmit={(formData, onSubmitProps) => {
                 console.log("formData", formData);
-                dispatch(startAddCustomer(formData, onSubmitProps));
+                dispatch(startAddProduct(formData, onSubmitProps));
               }}
             >
               {(formik) => {
                 return (
                   <>
                     <div className="text-center">
-                      <h3 className="mt-3 fw-bold mb-3">Add Customer</h3>
+                      <h3 className="mt-3 fw-bold mb-3">Add Product</h3>
                     </div>
                     <div>
                       <Form>
@@ -124,7 +118,7 @@ function CustomerForm(props) {
                             disabled={!formik.isValid}
                           >
                             <span className="spinner-grow spinner-grow-sm mr-3"></span>
-                            Add Customer
+                            Add Product
                           </button>
                         </div>
                       </Form>
