@@ -1,5 +1,6 @@
 import swal from "sweetalert";
 import { startGetAllCustomers } from "../action/customerAction";
+import { startGetAllProducts } from "../action/ProductAction";
 import { startGetUserAccountDetails } from "../action/userAccountDetailsAction";
 import axios from "../AxiosConfig/axiosConfig";
 
@@ -52,7 +53,7 @@ export const startLoginUser = (
           dispatch(setUserLoginStatus());
           dispatch(startGetUserAccountDetails());
           dispatch(startGetAllCustomers());
-          // dispatch(startGetAllProducts());
+          dispatch(startGetAllProducts());
           // dispatch(startGetAllBills());
 
           handleRedirect();

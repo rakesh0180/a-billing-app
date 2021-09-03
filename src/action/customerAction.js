@@ -30,7 +30,7 @@ export const startUpdateCustomer = (id, customerUpdateData, onSubmitProps) => {
       if (result.hasOwnProperty("error")) {
         swal("Error", result.error, "error");
       } else {
-        swal("Successfully", "Added customer", "success");
+        swal("Successfully", "updated customer data", "success");
         dispatch(updateCustomer(result));
         onSubmitProps.resetForm();
       }
