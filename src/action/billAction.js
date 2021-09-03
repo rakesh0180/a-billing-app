@@ -11,8 +11,8 @@ export const startCreateBill = (billData) => {
       } else {
         dispatch(createBill(result));
       }
-    } catch (err) {
-      alert(err.message);
+    } catch (error) {
+      alert(error.message);
     }
   };
 };
@@ -23,8 +23,8 @@ export const startGetAllBills = () => {
       const response = await axios.get("/bills");
       const result = response.data;
       dispatch(getAllBills(result));
-    } catch (err) {
-      alert(err.message);
+    } catch (error) {
+      alert(error.message);
     }
   };
 };
@@ -35,8 +35,8 @@ export const startDeleteBill = (id) => {
       const response = await axios.delete(`/bills/${id}`);
       const result = response.data;
       dispatch(deleteBill(result._id));
-    } catch (err) {
-      alert(err.message);
+    } catch (error) {
+      alert(error.message);
     }
   };
 };
