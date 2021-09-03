@@ -115,6 +115,13 @@ function Navbar(props) {
                   </nav.Nav.Link>
 
                   <nav.Nav.Link className="nav-item">
+                    <Link to="/bill">
+                      <RiBillLine style={color} className="bx-burst  bx-fw " />
+                      Bills
+                    </Link>
+                  </nav.Nav.Link>
+
+                  <nav.Nav.Link className="nav-item">
                     <Link to="/user">
                       <i className="bx bx-fw bx-user bx-tada-hover  "></i>
                       User
