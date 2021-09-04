@@ -10,9 +10,14 @@ function BillList(props) {
     handleDelete,
   } = props;
   return (
-    <div className=" col col-12  col-sm-12 col-md-12 col-lg-8 col-xl-8">
+    <div className=" col col-12  col-sm-12 col-md-12 col-lg-12 col-xl-11">
+      <div class="text-center">
+        <h4>
+          <center> Manage Your Bills</center>
+        </h4>
+      </div>
       <div className="card card-body  mx-auto mb-5 w-100 h-100">
-        <div className="table-responsive-sm shadow p-3 mb-5 bg-white rounded">
+        <div className="table-responsive-sm shadow p-3 mb-5 bg-white">
           <table className="table table-hover">
             <thead>
               <tr>
@@ -21,7 +26,7 @@ function BillList(props) {
                 <th scope="col">Customer Name</th>
                 <th scope="col">Mobile</th>
                 <th scope="col">Total</th>
-                <th scope="col" colspan="2">
+                <th scope="col" colspan="2" className="text-center">
                   Action
                 </th>
               </tr>

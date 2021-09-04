@@ -45,13 +45,7 @@ const BillContainer = (props) => {
   };
 
   return (
-    <div className="row mt-5">
-      <div class="text-center">
-        <h4>
-          <center>Your Bills</center>
-        </h4>
-      </div>
-
+    <div className="row mt-5 justify-content-center ">
       {bills.length > 0 ? (
         <>
           <BillList
@@ -71,8 +65,12 @@ const BillContainer = (props) => {
           />
         </>
       ) : (
-        <div style={{ paddingTop: "100px", paddingLeft: "500px" }}>
-          <h2>No bills found</h2>
+        <div className=" col col-12  col-sm-12 col-md-12 col-lg-12 col-xl-11">
+          <div className="card card-body  mx-auto mb-5 w-100 h-100">
+            <div className="text-center justify-content-center align-items-center">
+              <h2>No bills found</h2>
+            </div>
+          </div>
         </div>
       )}
     </div>

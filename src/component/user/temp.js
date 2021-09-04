@@ -311,3 +311,51 @@ export default withRouter(Navbar);
 // }
 
 // export default withRouter(Navbar);
+
+{
+  /* <nav.Nav.Link className="nav-item"></nav.Nav.Link> */
+}
+
+{
+  /* <nav.NavDropdown
+                    title="Profile"
+                    id="navbarScrollingDropdown"
+                    className="dropdown-menu-right "
+                    // class="nav-link dropdown-toggle"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <nav.NavDropdown.Item>
+                      <Link to="/user">
+                        <i className="bx bx-fw bx-user bx-tada-hover  "></i>
+                        User
+                      </Link>
+                    </nav.NavDropdown.Item>
+
+                    <nav.NavDropdown.Item>
+                      <Link
+                        onClick={() => {
+                          localStorage.removeItem("loginToken");
+                          swal("Successfully", "logged out", "success");
+                          dispatch(resetUserLoginStatus());
+                          props.history.push("/");
+                        }}
+                      >
+                        <i className="bx bx-fw bxs-left-arrow-circle bx-fade-left-hover  font-24 "></i>
+                        Logout
+                      </Link>
+                    </nav.NavDropdown.Item>
+
+                    <nav.NavDropdown.Item>
+                      <Link to="/dashboard">
+                        <i
+                          className="bx bx-fw bxs-dashboard  "
+                          style={{ color: "#AA96DA" }}
+                        ></i>
+                        Dashboard
+                      </Link>
+                    </nav.NavDropdown.Item>
+                  </nav.NavDropdown> */
+}
