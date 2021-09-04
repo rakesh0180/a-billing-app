@@ -56,21 +56,21 @@ function CustomerForm(props) {
                     type="text"
                     label="Name"
                     name="name"
-                    placeholder="Enter your Name"
+                    placeholder="Enter Customer Name"
                   />
                   <FormikControl
                     control="input"
                     type="text"
                     label="Mobile"
                     name="mobile"
-                    placeholder="Enter your Name"
+                    placeholder="Enter Mobile Number"
                   />
                   <FormikControl
                     control="input"
                     type="text"
                     label="Email"
                     name="email"
-                    placeholder="Enter your Name"
+                    placeholder="Enter email"
                   />
                   <Modal.Footer>
                     <button className="btn btn-primary mr-5" type="submit">

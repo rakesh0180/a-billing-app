@@ -1,4 +1,5 @@
-import axios from "../config/axiosConfig";
+import swal from "sweetalert";
+import axios from "../AxiosConfig/axiosConfig";
 
 export const startCreateBill = (billData) => {
   return async (dispatch) => {
@@ -7,8 +8,9 @@ export const startCreateBill = (billData) => {
       const result = response.data;
       console.log(result);
       if (result.hasOwnProperty("errors")) {
-        alert(result.message);
+        swal(result.message);
       } else {
+        swal("Successfully", "Bill generated", "success");
         dispatch(createBill(result));
       }
     } catch (error) {
@@ -34,7 +36,12 @@ export const startDeleteBill = (id) => {
     try {
       const response = await axios.delete(`/bills/${id}`);
       const result = response.data;
-      dispatch(deleteBill(result._id));
+      if (result.hasOwnProperty("errors")) {
+        swal(result.message);
+      } else {
+        swal("Successfully", "Bill Removed", "success");
+        dispatch(deleteBill(result._id));
+      }
     } catch (error) {
       alert(error.message);
     }

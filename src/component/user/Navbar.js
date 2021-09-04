@@ -110,7 +110,14 @@ function Navbar(props) {
                         className="bx bx-fw   "
                         style={{ color: "#6A2C70" }}
                       ></FaProductHunt>
-                      product
+                      Product
+                    </Link>
+                  </nav.Nav.Link>
+
+                  <nav.Nav.Link className="nav-item">
+                    <Link to="/cart">
+                      <RiBillLine style={color} className="bx-burst  bx-fw " />
+                      Cart
                     </Link>
                   </nav.Nav.Link>
 

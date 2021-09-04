@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { startDeleteBill, startGetAllBills } from "../../actions/billsActions";
+import { startDeleteBill, startGetAllBills } from "../../action/billAction";
 import BillList from "./BillList";
 import Invoice from "./Invoice";
 
