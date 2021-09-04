@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Hint } from "react-autocomplete-hint";
 import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { withRouter } from "react-router";
 import swal from "sweetalert";
 import { startCreateBill } from "../../action/billAction";
 import BillProduct from "./BillProduct";
@@ -111,4 +110,4 @@ const BillBody = (props) => {
   );
 };
 
-export default withRouter(BillBody);
+export default BillBody;

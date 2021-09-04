@@ -1,9 +1,16 @@
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { startGetUserAccountDetails } from "../../action/userAccountDetailsAction";
 import "./css/userDetails.css";
 import user from "./image/user.png";
 
 function UserDetails() {
   const userInfo = useSelector((state) => state.userAccountInfo);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(startGetUserAccountDetails());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   console.log("userAccountDetails", userInfo);
   return (

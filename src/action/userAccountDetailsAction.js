@@ -1,17 +1,15 @@
 import axios from "../AxiosConfig/axiosConfig";
 
 export const startGetUserAccountDetails = () => {
-  return (dispatch) => {
-    axios
-      .get("/users/account")
-      .then((response) => {
-        const result = response.data;
-        console.log("userAccountDetails", result);
-        dispatch(addUserInfo(result));
-      })
-      .catch((error) => {
-        console.log("userAccountDetails", error.message);
-      });
+  return async (dispatch) => {
+    try {
+      const response = await axios.get("/users/account");
+      const result = response.data;
+      console.log("userAccountDetails", result);
+      dispatch(addUserInfo(result));
+    } catch (error) {
+      console.log("userAccountDetails", error.message);
+    }
   };
 };
 

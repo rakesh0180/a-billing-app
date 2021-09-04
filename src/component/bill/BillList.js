@@ -16,8 +16,8 @@ function BillList(props) {
           <center> Manage Your Bills</center>
         </h4>
       </div>
-      <div className="card card-body  mx-auto mb-5 w-100 h-100">
-        <div className="table-responsive-sm shadow p-3 mb-5 bg-white">
+      <div className="card card-body  mx-auto w-100 h-100">
+        <div className="table-responsive-sm shadow p-3  bg-white">
           <table className="table table-hover">
             <thead>
               <tr>
