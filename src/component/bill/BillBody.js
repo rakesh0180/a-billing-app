@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Hint } from "react-autocomplete-hint";
-import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { withRouter } from "react-router";
 import swal from "sweetalert";
 import { startCreateBill } from "../../action/billAction";
 import BillProduct from "./BillProduct";
@@ -59,7 +59,7 @@ const BillBody = (props) => {
   return (
     <div className="m-3 pt-3">
       <form className="row mx-3">
-        <div className="form-group col-4">
+        <div className="form-group col-12   col-sm-12 col-md-12 col-lg-4 col-xl-4">
           <label>Add by Mobile No</label>
           <Hint options={mobileNumbers}>
             <input
@@ -73,7 +73,7 @@ const BillBody = (props) => {
             />
           </Hint>
         </div>
-        <div className="form-group col-4">
+        <div className="form-group col-12   col-sm-12 col-md-12 col-lg-4 col-xl-4">
           <label>Name</label>
           <input
             className="form-control"
@@ -84,21 +84,23 @@ const BillBody = (props) => {
         </div>
       </form>
       <div className="row align-items-end m-3">
-        <div className="col-4">
+        <div className="col col-12   col-sm-12 col-md-4 col-lg-4 col-xl-4">
           <label>Product name</label>
         </div>
-        <div className="col-4">
+        <div className="col col-12   col-sm-12 col-md-4 col-lg-4 col-xl-4">
           <label>Quantity</label>
         </div>
-        <div className="col-2">
+        <div className="col-12   col-sm-12 col-md-2 col-lg-2 col-xl-2">
           <label>Sub total</label>
         </div>
       </div>
 
       <BillProduct addLineItem={addLineItem} modalShow={modalShow} />
 
-      <div className="row justify-content-end mx-3">
-        <Button onClick={handleSubmit}>Create</Button>
+      <div>
+        <button className="btn w-75 col" onClick={handleSubmit}>
+          Create
+        </button>
       </div>
 
       <Invoice
@@ -110,4 +112,4 @@ const BillBody = (props) => {
   );
 };
 
-export default BillBody;
+export default withRouter(BillBody);

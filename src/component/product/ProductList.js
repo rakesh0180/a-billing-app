@@ -6,10 +6,14 @@ import ProductItem from "./ProductItem";
 const ProductList = () => {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(startGetAllProducts());
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [products]);
   useEffect(() => {
     dispatch(startGetAllProducts());
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [products]);
+  }, []);
 
   return (
     <div className="card card-body  mx-auto  w-100 h-100">

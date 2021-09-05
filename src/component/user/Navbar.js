@@ -2,23 +2,13 @@
 import React from "react";
 import * as nav from "react-bootstrap";
 import { FaProductHunt, FaUsers } from "react-icons/fa";
-import { IoLanguage } from "react-icons/io5";
+import { IoCartOutline, IoLanguage } from "react-icons/io5";
 import { RiBillLine } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import swal from "sweetalert";
-// import { startUserAccountGetDetails } from "../../action/userAccountDetailsAction";
 import { resetUserLoginStatus } from "../../action/userLoginStatusAction";
-// import CustomerContainer from "../customer/CustomerContainer";
-// import DashboardContainer from "../dashboard/DashboardContainer";
-// import ProductContainer from "../product/ProductContainer";
 import "./css/navbar.css";
-// import Home from "./Home";
-// import Login from "./Login";
-// import PrivateRoute from "./PrivateRoute";
-// import PublicRoute from "./PublicRoute";
-// import Signup from "./Signup";
-// import UserDetails from "./UserDetails";
 
 function Navbar(props) {
   const dispatch = useDispatch();
@@ -44,7 +34,7 @@ function Navbar(props) {
       >
         <>
           <nav.Navbar.Brand className="navbar-brand text-uppercase brand  fs-5 font-weight-bold ">
-            <RiBillLine style={color} className="bx-burst  bx-fw font-30 " />
+            <RiBillLine style={color} className=" ml-3   fa-2x " />
             Billing App
           </nav.Navbar.Brand>
 
@@ -54,11 +44,11 @@ function Navbar(props) {
               {!userLoginStatus ? (
                 <>
                   <nav.Nav.Link className="nav-item" as={Link} to="/">
-                    <i className="bx bx-fw bxs-right-arrow-circle bx-fade-right-hover "></i>
+                    <i className="bx bx-fw bxs-right-arrow-circle bx-fade-right-hover  fa-2x "></i>
                     Login
                   </nav.Nav.Link>
                   <nav.Nav.Link className="nav-item" as={Link} to="/home">
-                    <i className="bx bx-fw bx-home bx-burst-hover "> </i>
+                    <i className="bx bx-fw bx-home bx-burst-hover  fa-2x "> </i>
                     Home
                   </nav.Nav.Link>
                   <nav.Nav.Link className="nav-item" as={Link} to="/sign-up">
@@ -69,6 +59,7 @@ function Navbar(props) {
               ) : (
                 <>
                   <nav.Nav.Link
+                    className="nav-item"
                     // className="nav-item secondary border-0 "
                     // data-toggle="tooltip"
                     // data-placement="bottom"
@@ -77,7 +68,7 @@ function Navbar(props) {
                     to="/dashboard"
                   >
                     <i
-                      className="bx bx-fw bxs-dashboard  "
+                      className="bx bx-fw bxs-dashboard  fa-2x "
                       style={{ color: "#AA96DA" }}
                     ></i>
                     Dashboard
@@ -100,7 +91,10 @@ function Navbar(props) {
                   </nav.Nav.Link>
 
                   <nav.Nav.Link className="nav-item" as={Link} to="/cart">
-                    <RiBillLine style={color} className="bx-burst  bx-fw " />
+                    <IoCartOutline
+                      style={color}
+                      className="bx-burst  bx-fw  fa-2x"
+                    />
                     Cart
                   </nav.Nav.Link>
 
@@ -110,7 +104,7 @@ function Navbar(props) {
                   </nav.Nav.Link>
 
                   <nav.Nav.Link className="nav-item" as={Link} to="/user">
-                    <i className="bx bx-fw bx-user bx-tada-hover  "></i>
+                    <i className="bx bx-fw bx-user bx-tada-hover fa-3x "></i>
                     User
                   </nav.Nav.Link>
                   <nav.Nav.Link
@@ -124,13 +118,13 @@ function Navbar(props) {
                       props.history.push("/");
                     }}
                   >
-                    <i className="bx bx-fw bxs-left-arrow-circle bx-fade-left-hover  font-24 "></i>
+                    <i className="bx bx-fw bxs-left-arrow-circle bx-fade-left-hover  fa-3x "></i>
                     Logout
                   </nav.Nav.Link>
                   <nav.Nav.Link className="nav-item " as={Link} to="#">
                     <>
                       <IoLanguage
-                        className="bx bx-fw "
+                        className="bx bx-fw fa-2x "
                         style={{ color: "#ff8b01" }}
                       ></IoLanguage>
                       <div id="google_translate_element"></div>

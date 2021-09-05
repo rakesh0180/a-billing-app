@@ -110,29 +110,31 @@ const BillProduct = (props) => {
         return (
           <div key={i}>
             <div className="row align-items-end m-3" key={i}>
-              <div className="col-4">
+              <div className="col-12   col-sm-12  col-md-4 col-lg-4 col-xl-4">
                 <Hint options={productNames}>
                   <input
                     className="form-control"
                     type="text"
                     name="name"
+                    placeholder="Enter Product Name"
                     value={ele.name}
                     onBlur={(e) => handleAutoFill(e, i)}
                     onChange={(e) => handleChange(e, i)}
                   />
                 </Hint>
               </div>
-              <div className="col-4">
+              <div className="col-12      col-sm-12   col-md-4 col-lg-4 col-xl-4">
                 <input
                   className="form-control"
                   type="number"
                   name="quantity"
+                  placeholder="Enter Product quantity"
                   value={ele.quantity}
                   onChange={(e) => handleChange(e, i)}
                   onBlur={(e) => handleBlur(e, i)}
                 />
               </div>
-              <div className="col-2">
+              <div className="col-12    col-sm-12  col-md-2 col-lg-2 col-xl-2">
                 <input
                   className="form-control"
                   type="text"
@@ -141,20 +143,20 @@ const BillProduct = (props) => {
                   disabled={true}
                 />
               </div>
-              <div className="col-2">
+              <div className="col-12      col-sm-12  col-md-2 col-lg-2 col-xl-2">
                 {productDetails.length > 1 && (
                   <button
                     style={{ color: "red" }}
                     className="btn"
                     onClick={() => handleRemoveLineItem(i)}
                   >
-                    <MdIndeterminateCheckBox />
+                    <MdIndeterminateCheckBox style={{ fontSize: "16px" }} />
                   </button>
                 )}
                 {i === productDetails.length - 1 && (
                   <button
                     style={{ color: "green" }}
-                    className="btn col-1 w-75 mx-1 mb-2"
+                    className="btn ml-3 "
                     onClick={handleAddLineItem}
                   >
                     <MdAddBox />
@@ -165,10 +167,10 @@ const BillProduct = (props) => {
           </div>
         );
       })}
-      <div className="row justify-content-end align-items-center my-4 mx-4">
-        <label className="mx-2 my-1">Total</label>
+      <div className="row  my-4 mx-4 col-12 col-sm-12 justify-content-end  align-items-center">
+        <label className="mx-2 my-1 col-12  col-sm-12">Total</label>
         <input
-          className="form-control col-2 justify-content-center"
+          className="form-control col-12  col-sm-12 justify-content-center"
           type="text"
           value={total}
           disabled={true}

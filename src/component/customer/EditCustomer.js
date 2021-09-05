@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
+import "../user/css/closeButton.css";
 import CustomerForm from "./CustomerForm";
 
 function EditCustomer({ customer, ...props }) {

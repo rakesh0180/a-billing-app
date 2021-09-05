@@ -9,8 +9,11 @@ import {
 } from "../../action/ProductAction";
 import FormikControl from "../formikHelper/FormikControl";
 
-function CustomerForm({ formType, product, onHide }) {
+function CustomerForm(props) {
+  const { formType, product, onHide } = props;
   const dispatch = useDispatch();
+  console.log("product", product);
+
   const initialValues = {
     name: "",
     price: "",

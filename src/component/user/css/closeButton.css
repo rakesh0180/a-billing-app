@@ -1,0 +1,9 @@
+.close {
+  color: black;
+}
+
+.close:focus,
+.close:hover {
+  -webkit-transform: scale(1.35);
+  color: red;
+}

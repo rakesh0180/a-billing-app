@@ -14,13 +14,17 @@ const BillStart = (props) => {
       }}
     >
       <div className="form-group justify-content-start">
-        <label>Business-Name:</label>
-        <h6>
-          {userAccountInfo.businessName} - {userAccountInfo.address}
-        </h6>
+        <div className="col-12   col-sm-12 col-md-4 col-lg-4 col-xl-4">
+          <label>Business-Name:</label>
+          <h6>{userAccountInfo.businessName}</h6>
+        </div>
+        <div className="col-12   col-sm-12 col-lg-4 col-xl-4">
+          <label>Business-Name:</label>
+          <h6>{userAccountInfo.address}</h6>
+        </div>
       </div>
 
-      <div className="form-group  justify-content-end">
+      <div className="form-group col-12   col-sm-12 col-lg-4 col-xl-4 justify-content-end">
         <label>Date:</label>
         <h6>{date}</h6>
       </div>

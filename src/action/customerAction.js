@@ -68,7 +68,7 @@ export const startGetAllCustomers = () => {
       if (result.hasOwnProperty("error")) {
         swal("Error", result.error, "error");
       } else {
-        dispatch(getCustomers(result));
+        dispatch(getAllCustomers(result));
       }
     } catch (error) {
       swal("Error", "error in data", "error");
@@ -97,7 +97,7 @@ export const removeCustomer = (id) => {
   };
 };
 
-export const getCustomers = (customersData) => {
+export const getAllCustomers = (customersData) => {
   return {
     type: "GET_ALL_CUSTOMERS",
     payload: customersData,
