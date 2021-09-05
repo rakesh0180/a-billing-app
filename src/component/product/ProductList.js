@@ -1,12 +1,23 @@
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { startGetAllProducts } from "../../action/ProductAction";
 import ProductItem from "./ProductItem";
 
 const ProductList = () => {
   const products = useSelector((state) => state.products);
+  const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(startGetAllProducts());
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [products]);
+  useEffect(() => {
+    dispatch(startGetAllProducts());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <div className="card card-body  mx-auto mb-5 w-100 h-100">
-      <div className="table-responsive-sm shadow p-3 mb-5 bg-white rounded">
+    <div className="card card-body  mx-auto  w-100 h-100">
+      <div className="table-responsive-sm shadow p-3  bg-white rounded">
         <table className="table table-hover">
           <thead>
             <tr>

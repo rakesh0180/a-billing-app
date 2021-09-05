@@ -29,6 +29,7 @@ export const startUpdateProduct = (id, productUpdateData) => {
       if (result.hasOwnProperty("error")) {
         swal("Error", result.error, "error");
       } else {
+        swal("Successfully", "updated product data", "success");
         dispatch(updateProduct(result));
       }
     } catch (error) {

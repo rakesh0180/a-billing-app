@@ -18,7 +18,7 @@ function ProductItem(props) {
         <EditProduct
           show={modalShow}
           onHide={() => setModalShow(false)}
-          customer={product}
+          product={product}
         />
       </td>
       <td>

@@ -1,6 +1,6 @@
 import { Form, Formik } from "formik";
 import { isEmpty } from "lodash";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, Route } from "react-router-dom";
 import * as Yup from "yup";
@@ -12,6 +12,16 @@ import Signup from "./Signup";
 const Login = (props) => {
   const [serverErrors, setServerErrors] = useState({});
   const dispatch = useDispatch();
+
+  //server error after 3 sec clear error message
+  useEffect(() => {
+    const timerVar = setTimeout(() => {
+      setServerErrors({});
+    }, 3000);
+    return () => {
+      clearTimeout(timerVar);
+    };
+  }, [serverErrors]);
 
   const initialValues = {
     email: "",
@@ -53,27 +63,27 @@ const Login = (props) => {
           }}
         >
           {(formik) => (
-            <div class="wrapper">
+            <div className="wrapper">
               <div
-                class="
+                className="
           section-authentication-login
           d-flex
           justify-content-center
           align-items-center
         "
               >
-                <div class="row ">
-                  <div class="col-12 col-lg-10 mx-auto">
-                    <div class="card radius-15">
-                      <div class="row no-gutters">
-                        <div class="col-lg-6">
-                          <div class="card-body p-md-5">
-                            <div class="text-center">
-                              <h3 class="mt-4 font-weight-bold">
+                <div className="row ">
+                  <div className="col-12 col-lg-10 mx-auto">
+                    <div className="card radius-15">
+                      <div className="row no-gutters ">
+                        <div className="col-lg-6">
+                          <div className="card-body p-md-5">
+                            <div className="text-center">
+                              <h3 className="mt-4 font-weight-bold">
                                 Welcome Back
                               </h3>
 
-                              <div>
+                              <div className="col-sm-12">
                                 <h2>Login using Email</h2>
                               </div>
                             </div>

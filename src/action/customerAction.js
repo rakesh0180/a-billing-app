@@ -32,6 +32,7 @@ export const startUpdateCustomer = (id, customerUpdateData, onSubmitProps) => {
       } else {
         swal("Successfully", "updated customer data", "success");
         dispatch(updateCustomer(result));
+        // window.location.reload();
         onSubmitProps.resetForm();
       }
     } catch (error) {
@@ -67,7 +68,7 @@ export const startGetAllCustomers = () => {
       if (result.hasOwnProperty("error")) {
         swal("Error", result.error, "error");
       } else {
-        dispatch(getCustomers(result));
+        dispatch(getAllCustomers(result));
       }
     } catch (error) {
       swal("Error", "error in data", "error");
@@ -96,7 +97,7 @@ export const removeCustomer = (id) => {
   };
 };
 
-export const getCustomers = (customersData) => {
+export const getAllCustomers = (customersData) => {
   return {
     type: "GET_ALL_CUSTOMERS",
     payload: customersData,

@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { Redirect, Switch } from "react-router-dom";
 import { setUserLoginStatus } from "./action/userLoginStatusAction";
 import "./App.css";
+import BillContainer from "./component/bill/BillContainer";
+import BillSubContainer from "./component/bill/BillSubContainer";
 import CustomerContainer from "./component/customer/CustomerContainer";
 import DashboardContainer from "./component/dashboard/DashboardContainer";
 import ProductContainer from "./component/product/ProductContainer";
@@ -49,6 +51,12 @@ function App() {
             exact={true}
           />
           <PrivateRoute path="/user" component={UserDetails} exact={true} />
+          <PrivateRoute
+            path="/cart"
+            component={BillSubContainer}
+            exact={true}
+          />
+          <PrivateRoute path="/bill" component={BillContainer} exact={true} />
           <Redirect to="not-found" />
         </Switch>
       </div>

@@ -1,5 +1,6 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import thunk from "redux-thunk";
+import billsReducer from "../reducer/billsReducer";
 import customersReducer from "../reducer/customersReducer";
 import productsReducer from "../reducer/ProductsReducer";
 import userAccountInfoReducer from "../reducer/userAccountInfoReducer";
@@ -11,6 +12,7 @@ const configStore = () => {
       userAccountInfo: userAccountInfoReducer,
       customers: customersReducer,
       products: productsReducer,
+      bills: billsReducer,
     }),
     applyMiddleware(thunk)
   );

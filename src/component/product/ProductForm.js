@@ -10,13 +10,15 @@ import {
 import FormikControl from "../formikHelper/FormikControl";
 
 function CustomerForm(props) {
-  const { formType, onHide, product } = props;
+  const { formType, product, onHide } = props;
   const dispatch = useDispatch();
+  console.log("product", product);
 
   const initialValues = {
     name: "",
     price: "",
   };
+
   const validationSchema = Yup.object({
     name: Yup.string().required("Name is required"),
     price: Yup.string().required("Price is required"),

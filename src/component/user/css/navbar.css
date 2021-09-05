@@ -16,12 +16,37 @@ body {
 }
 
 /* Navbar */
-a:-webkit-any-link {
+/* a:-webkit-any-link {
+  color: black;
+  padding: 1rem;
+} */
+
+.navbar-light .navbar-nav .nav-link {
   color: black;
   padding: 1rem;
 }
 
-a:-webkit-any-link :hover {
+/* a.nav-item.nav-link {
+  color: black;
+} */
+
+a.nav-item.nav-link {
+  color: white;
+}
+/* a.nav-item.nav-link:focus,
+a.nav-item.nav-link:hover {
+  color: white;
+  background-color: #4188ff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 15%;
+  border: none;
+  cursor: pointer;
+} */
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: white;
   color: white;
   background-color: #4188ff;
   text-decoration: none;
@@ -47,11 +72,6 @@ a:-webkit-any-link :hover {
 
 .navbar {
   padding: 0;
-}
-
-a#navbarScrollingDropdown {
-  /* background-color: ; */
-  color: black;
 }
 
 a#navbarScrollingDropdown:hover {
@@ -89,17 +109,7 @@ div#google_translate_element {
   border: none;
   border-radius: 15%;
 }
-/*
-.bx {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ededed;
-  font-size: 26px;
-  border-radius: 10px;
-} */
+
 a#navbarScrollingDropdown {
   /* padding: 16px; */
   margin-left: 1rem;
@@ -108,4 +118,7 @@ a#navbarScrollingDropdown {
 
 a.nav-item.nav-link {
   width: fit-content;
+}
+.goog-te-combo {
+  width: 9.5rem;
 }
