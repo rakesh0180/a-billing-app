@@ -17,10 +17,10 @@ if (localStorage.getItem("token")) {
   store.dispatch(startGetAllBills());
 }
 
-console.log("initial store", store.getState());
+// console.log("initial store", store.getState());
 
 store.subscribe(() => {
-  console.log("store", store.getState());
+  // console.log("store", store.getState());
 });
 
 ReactDOM.render(
