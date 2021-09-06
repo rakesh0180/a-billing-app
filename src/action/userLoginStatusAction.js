@@ -11,11 +11,10 @@ export const startSignupUser = (signupData, handleRedirect, onSubmitProps) => {
     .post("/users/register", signupData)
     .then((response) => {
       const result = response.data;
-      console.log("result", result);
+      // console.log("result", result);
       // console.log(result.errmsg);
       if (result.hasOwnProperty("errmsg")) {
         //server error
-        // swal("Error", result.errmsg, "error");
         const error = "email or userName already exists";
         swal("Error", error, "error");
       } else {
@@ -25,7 +24,6 @@ export const startSignupUser = (signupData, handleRedirect, onSubmitProps) => {
       }
     })
     .catch((error) => {
-      //   alert("errors", error.message);
       swal("Error", "some error in data", error.message);
     });
 };
@@ -42,9 +40,9 @@ export const startLoginUser = (
     try {
       const response = await axios.post("/users/login", loginFormData);
       const result = response.data;
-      console.log(result);
+      // console.log(result);
       if (result.hasOwnProperty("errors")) {
-        console.log(result);
+        // console.log(result);
         handleServerErrors(result);
       } else {
         swal("Successfully", "Logged In", "success");

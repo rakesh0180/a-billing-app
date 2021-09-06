@@ -6,7 +6,7 @@ export const startAddProduct = (productData, onSubmitProps) => {
     try {
       const response = await axios.post("/products", productData);
       const result = response.data;
-      console.log("Product", result);
+      // console.log("Product", result);
       if (result.hasOwnProperty("error")) {
         swal("Error", result.error, "error");
       } else {
@@ -25,7 +25,7 @@ export const startUpdateProduct = (id, productUpdateData) => {
     try {
       const response = await axios.put(`/products/${id}`, productUpdateData);
       const result = response.data;
-      console.log("productUpdate", result);
+      // console.log("productUpdate", result);
       if (result.hasOwnProperty("error")) {
         swal("Error", result.error, "error");
       } else {
@@ -43,7 +43,7 @@ export const startRemoveProduct = (id) => {
     try {
       const response = await axios.delete(`/products/${id}`);
       const result = response.data;
-      console.log(result);
+      // console.log(result);
       if (result.hasOwnProperty("error")) {
         swal("Error", result.error, "error");
       } else {
@@ -60,7 +60,7 @@ export const startGetAllProducts = () => {
     try {
       const response = await axios.get("/products");
       const result = response.data;
-      console.log("ProductList", result);
+      // console.log("ProductList", result);
       if (result.hasOwnProperty("error")) {
         swal("Error", result.error, "error");
       } else {

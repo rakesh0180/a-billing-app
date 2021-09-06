@@ -6,7 +6,7 @@ export const startCreateBill = (billData) => {
     try {
       const response = await axios.post("/bills", billData);
       const result = response.data;
-      console.log(result);
+      // console.log(result);
       if (result.hasOwnProperty("errors")) {
         swal(result.message);
       } else {

@@ -5,8 +5,8 @@ import { BiRupee } from "react-icons/bi";
 import { FaRupeeSign } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { useReactToPrint } from "react-to-print";
+import printIcon from "../../assets/img/icon/logo-icon.png";
 import "./css/invoice.css";
-
 const Invoice = (props) => {
   const { customer, date, lineItems } = props;
 
@@ -91,11 +91,7 @@ const Invoice = (props) => {
                       <div className="row">
                         <div className="col">
                           <>
-                            <img
-                              src="../../assets/img/icon/logo-icon.png"
-                              width="80"
-                              alt=""
-                            />
+                            <img src={printIcon} width="80" alt="" />
                           </>
                         </div>
                         <div className="col company-details">

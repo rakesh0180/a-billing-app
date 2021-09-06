@@ -6,7 +6,7 @@ export const startAddCustomer = (customerData, onSubmitProps) => {
     try {
       const response = await axios.post(`/customers`, customerData);
       const result = response.data;
-      console.log("customers", result);
+      // console.log("customers", result);
       // console.log(typeof result);
       if (result.hasOwnProperty("error")) {
         swal("Error", result.error, "error");
@@ -26,7 +26,7 @@ export const startUpdateCustomer = (id, customerUpdateData, onSubmitProps) => {
     try {
       const response = await axios.put(`/customers/${id}`, customerUpdateData);
       const result = response.data;
-      console.log("customerUpdate", result);
+      // console.log("customerUpdate", result);
       if (result.hasOwnProperty("error")) {
         swal("Error", result.error, "error");
       } else {
@@ -45,7 +45,7 @@ export const startRemoveCustomer = (id) => {
     try {
       const response = await axios.delete(`/customers/${id}`);
       const result = response.data;
-      console.log(result);
+      // console.log(result);
       if (result.hasOwnProperty("error")) {
         swal("Error", result.error, "error");
       } else {
@@ -63,7 +63,7 @@ export const startGetAllCustomers = () => {
     try {
       const response = await axios.get(`/customers`);
       const result = response.data;
-      console.log(result);
+      // console.log(result);
       if (result.hasOwnProperty("error")) {
         swal("Error", result.error, "error");
       } else {
