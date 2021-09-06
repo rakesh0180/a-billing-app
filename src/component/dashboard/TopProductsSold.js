@@ -44,7 +44,7 @@ const TopProductsSold = ({ products }) => {
   const top5 = sortData.slice(0, 5);
 
   return (
-    <div>
+    <div col col-sm-12>
       <TopProductsBarChart top5={top5} />
     </div>
   );

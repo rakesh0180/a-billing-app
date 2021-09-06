@@ -13,7 +13,7 @@ const TopProductsBarChart = ({ top5 }) => {
   const data = top5;
 
   return (
-    <div>
+    <div className="col col-sm-12">
       <BarChart
         width={600}
         height={300}

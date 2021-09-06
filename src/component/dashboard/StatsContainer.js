@@ -23,7 +23,7 @@ const StatsContainer = (props) => {
       {customers && bills && products ? (
         <>
           <div className="row d-flex mt-2 ml-1">
-            <div className="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <div className="col col-sm-6 col-md-6 col-lg-3 col-xl-3">
               <Stats
                 variant="Warning"
                 Header="Customers"
@@ -31,7 +31,7 @@ const StatsContainer = (props) => {
                 icon={<FiUsers />}
               />
             </div>
-            <div className="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <div className="col col-sm-6 col-md-6 col-lg-3 col-xl-3">
               <Stats
                 variant="Danger"
                 Header="Orders"
@@ -39,7 +39,7 @@ const StatsContainer = (props) => {
                 icon={<BiCart />}
               />
             </div>
-            <div className="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <div className="col col-sm-6 col-md-6 col-lg-3 col-xl-3">
               <Stats
                 variant="Info"
                 Header="Total Revenue"
@@ -47,7 +47,7 @@ const StatsContainer = (props) => {
                 icon={<BiRupee />}
               />
             </div>
-            <div className="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <div className="col col-sm-6 col-md-6 col-lg-3 col-xl-3">
               <Stats
                 variant="Success"
                 Header="Inventory"
@@ -57,12 +57,12 @@ const StatsContainer = (props) => {
             </div>
           </div>
           <div className="row d-flex justify-content-center mt-5">
-            <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 mb-5 ">
+            <div className="col col-sm-12 col-md-3 col-lg-3 col-xl-3 mt-3 ">
               <CustomerChart bills={bills} customers={customers} />
             </div>
             <div
               style={{ backgroundColor: "white" }}
-              className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-8 ml-5"
+              className="col col-sm-12 col-md-8 col-lg-8 col-xl-8 col-8  mt-3 ml-5 text-center"
             >
               <p
                 className="text-center"
