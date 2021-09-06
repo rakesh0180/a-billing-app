@@ -33,7 +33,7 @@ function RemoveCustomer(props) {
         removeCustomer(id);
       }}
     >
-      <i className="bx bxs-trash " style={{ color: "red" }}></i>
+      <i className="bx bxs-trash "></i>
       Delete
     </button>
   );

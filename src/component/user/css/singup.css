@@ -51,18 +51,36 @@ select {
 }
 
 /* button */
-.btn {
+.btn1 {
   background-color: #4188ff;
   box-shadow: 0 0 1px #ccc;
   -webkit-transition: all 0.5s ease-in-out;
   /* border: none; */
   color: #fff;
 }
-.btn:hover {
+.btn1:hover {
   transform: 0;
   color: #fff;
   -webkit-transform: scale(1.35);
   background-color: #4242ff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.btn2 {
+  background-color: red;
+  box-shadow: 0 0 1px #ccc;
+  -webkit-transition: all 0.5s ease-in-out;
+  /* border: none; */
+  color: #fff;
+  /* padding: 0.5rem;
+  border: none;
+  border-radius: 15%; */
+}
+.btn2:hover {
+  transform: 0;
+  color: #fff;
+  -webkit-transform: scale(1.35);
+  background-color: red;
   text-transform: uppercase;
   cursor: pointer;
 }

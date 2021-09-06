@@ -32,7 +32,6 @@ export const startUpdateCustomer = (id, customerUpdateData, onSubmitProps) => {
       } else {
         swal("Successfully", "updated customer data", "success");
         dispatch(updateCustomer(result));
-        // window.location.reload();
         onSubmitProps.resetForm();
       }
     } catch (error) {

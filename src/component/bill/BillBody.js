@@ -98,7 +98,7 @@ const BillBody = (props) => {
       <BillProduct addLineItem={addLineItem} modalShow={modalShow} />
 
       <div>
-        <button className="btn w-75 col" onClick={handleSubmit}>
+        <button className="btn btn1 w-75 col" onClick={handleSubmit}>
           Create
         </button>
       </div>

@@ -12,8 +12,8 @@ function ProductItem(props) {
       <td>{product.name}</td>
       <td>{product.price}</td>
       <td>
-        <button className="btn" onClick={() => setModalShow(true)}>
-          <i className="bx bxs-edit mr-2  " style={{ color: "red" }}></i>Edit
+        <button className="btn btn-success" onClick={() => setModalShow(true)}>
+          <i className="bx bxs-edit mr-2  " style={{ color: "white" }}></i>Edit
         </button>
         <EditProduct
           show={modalShow}

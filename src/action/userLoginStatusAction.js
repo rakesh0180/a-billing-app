@@ -45,29 +45,6 @@ export const startLoginUser = (
       console.log(result);
       if (result.hasOwnProperty("errors")) {
         console.log(result);
-<<<<<<< HEAD
-        if (result.hasOwnProperty("errors")) {
-          console.log(result);
-          handleServerErrors(result);
-        } else {
-          swal("Successfully", "Logged In", "success");
-          localStorage.setItem("loginToken", result.token);
-          //change status of user
-          dispatch(setUserLoginStatus());
-          dispatch(startGetUserAccountDetails());
-          dispatch(startGetAllCustomers());
-          dispatch(startGetAllProducts());
-          // dispatch(startGetAllBills());
-
-          handleRedirect();
-          onSubmitProps.resetForm();
-          window.location.reload();
-        }
-      })
-      .catch((error) => {
-        swal("Error", "error in data", error.message);
-      });
-=======
         handleServerErrors(result);
       } else {
         swal("Successfully", "Logged In", "success");
@@ -80,12 +57,10 @@ export const startLoginUser = (
         dispatch(startGetAllBills());
         handleRedirect();
         onSubmitProps.resetForm();
-        window.location.reload();
       }
     } catch (error) {
       swal("Error", "error in data", error.message);
     }
->>>>>>> dashboard
   };
 };
 

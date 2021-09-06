@@ -146,8 +146,7 @@ const BillProduct = (props) => {
               <div className="col-12      col-sm-12  col-md-2 col-lg-2 col-xl-2">
                 {productDetails.length > 1 && (
                   <button
-                    style={{ color: "red" }}
-                    className="btn"
+                    className="btn btn-danger"
                     onClick={() => handleRemoveLineItem(i)}
                   >
                     <MdIndeterminateCheckBox style={{ fontSize: "16px" }} />
@@ -155,8 +154,7 @@ const BillProduct = (props) => {
                 )}
                 {i === productDetails.length - 1 && (
                   <button
-                    style={{ color: "green" }}
-                    className="btn ml-3 "
+                    className="btn btn-success ml-3 "
                     onClick={handleAddLineItem}
                   >
                     <MdAddBox />

@@ -28,12 +28,12 @@ function RemoveProduct(props) {
 
   return (
     <button
-      className="btn btn-danger"
+      className="btn btn-danger "
       onClick={() => {
         removeProduct(id);
       }}
     >
-      <i className="bx bxs-trash " style={{ color: "red" }}></i>
+      <i className="bx bxs-trash " style={{ color: "white" }}></i>
       Delete
     </button>
   );

@@ -31,8 +31,8 @@ function CustomerList() {
       ) : (
         <div className=" col col-12  col-sm-12 col-md-12 col-lg-8 col-xl-8 overflow-auto">
           <div className="card card-body  mx-auto  w-100  overflow-scroll">
-            <div class="table-responsive-sm shadow p-3  bg-white  overflow-scroll">
-              <table class="table table-hover">
+            <div className="table-responsive-sm shadow p-3  bg-white  overflow-scroll">
+              <table className="table table-hover">
                 <thead>
                   <tr>
                     <th scope="col">Id</th>

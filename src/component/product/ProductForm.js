@@ -63,11 +63,12 @@ function CustomerForm(props) {
                   />
 
                   <Modal.Footer>
-                    <button className="btn btn-primary mr-5" type="submit">
+                    <button className="btn  btn-primary mr-5" type="submit">
                       Update
                     </button>
                     <button
                       className="btn btn-danger"
+                      bg="danger"
                       type="reset"
                       onClick={onHide}
                     >
@@ -115,7 +116,7 @@ function CustomerForm(props) {
 
                         <div className="text-center">
                           <button
-                            className=" btn btn-primary w-75 mt-3 radius-30"
+                            className=" btn btn1 btn-primary w-75 mt-3 radius-30"
                             type="submit"
                             disabled={!formik.isValid}
                           >

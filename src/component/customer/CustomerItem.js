@@ -17,8 +17,8 @@ function CustomerItem(props) {
       <td>{customer.mobile}</td>
       <td>{customer.email}</td>
       <td>
-        <button className="btn" onClick={handleEdit}>
-          <i className="bx bxs-edit mr-2  " style={{ color: "red" }}></i>Edit
+        <button className="btn btn-success " onClick={handleEdit}>
+          <i className="bx bxs-edit mr-2  "></i>Edit
         </button>
         <EditCustomer
           show={modalShow}

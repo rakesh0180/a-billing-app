@@ -18,13 +18,16 @@ function BillItem(props) {
       <td>{findCustomer(bill.customer, customers).mobile}</td>
       <td>{bill.total}</td>
       <td>
-        <button className="btn text-center" onClick={() => handleInvoice(bill)}>
+        <button
+          className="btn btn-primary text-center"
+          onClick={() => handleInvoice(bill)}
+        >
           invoice
         </button>
       </td>
       <td>
         <button
-          className="btn text-center"
+          className="btn btn-danger text-center"
           onClick={() => handleDelete(bill._id)}
         >
           delete

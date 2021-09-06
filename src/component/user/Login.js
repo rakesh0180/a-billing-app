@@ -111,7 +111,7 @@ const Login = (props) => {
 
                               <div className="text-center">
                                 <button
-                                  className=" btn btn-primary w-75 mt-3"
+                                  className=" btn btn1 btn-primary w-75 mt-3"
                                   type="submit"
                                   disabled={!formik.isValid}
                                 >

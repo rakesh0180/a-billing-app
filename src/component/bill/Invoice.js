@@ -143,7 +143,7 @@ const Invoice = (props) => {
         </table>
       </Modal.Body>
       <Modal.Footer>
-        <button onClick={printBill} className=" btn col-2 mr-3">
+        <button onClick={printBill} className=" btn btn-danger col-2 mr-3">
           Print
         </button>
       </Modal.Footer>
