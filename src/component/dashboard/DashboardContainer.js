@@ -11,7 +11,7 @@ function DashboardContainer() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (localStorage.getItem("token")) {
+    if (localStorage.getItem("loginToken")) {
       dispatch(startGetUserAccountDetails());
       dispatch(startGetAllCustomers());
       dispatch(startGetAllProducts());

@@ -20,8 +20,14 @@ if (localStorage.getItem("token")) {
 // console.log("initial store", store.getState());
 
 store.subscribe(() => {
-  // console.log("store", store.getState());
+  console.log("store", store.getState());
 });
+if (localStorage.hasOwnProperty("loginToken")) {
+  store.dispatch(asyncGetAccDetails());
+  store.dispatch(asyncGetProducts());
+  store.dispatch(asyncGetCustomers());
+  store.dispatch(asyncGetBills());
+}
 
 ReactDOM.render(
   <Provider store={store}>
