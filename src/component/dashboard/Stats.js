@@ -15,7 +15,7 @@ const Stats = (props) => {
         >
           <Card.Body>
             <div class="widgets-icons mx-auto rounded-circle bg-white">
-              <i class="bx bx-line-chart"></i>
+              {icon}
             </div>
             <Card.Title style={{ fontSize: "30px", paddingTop: "10px" }}>
               {value}

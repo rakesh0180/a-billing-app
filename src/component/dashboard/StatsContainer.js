@@ -1,4 +1,5 @@
 import React from "react";
+import { BiCart, BiRupee } from "react-icons/bi";
 import { FiUsers } from "react-icons/fi";
 import { RiProductHuntFill } from "react-icons/ri";
 import { useSelector } from "react-redux";
@@ -27,6 +28,7 @@ const StatsContainer = (props) => {
                 variant="Warning"
                 Header="Customers"
                 value={totalCustomers}
+                icon={<FiUsers />}
               />
             </div>
             <div className="col-3">
@@ -34,7 +36,7 @@ const StatsContainer = (props) => {
                 variant="Danger"
                 Header="Orders"
                 value={totalOrders}
-                icon={<FiUsers />}
+                icon={<BiCart />}
               />
             </div>
             <div className="col-3">
@@ -42,6 +44,7 @@ const StatsContainer = (props) => {
                 variant="Info"
                 Header="Total Revenue"
                 value={totalRevenue}
+                icon={<BiRupee />}
               />
             </div>
             <div className="col-3">
