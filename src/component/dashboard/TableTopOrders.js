@@ -12,7 +12,7 @@ const TableTopOrders = ({ bills, customers }) => {
   };
 
   return (
-    <div className="text-center">
+    <div className="text-center mt-4">
       <strong>Highest transactions</strong>
       <Table className="mt-1" size="sm">
         <thead>
