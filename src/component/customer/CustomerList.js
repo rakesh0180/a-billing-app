@@ -7,15 +7,10 @@ function CustomerList() {
   const customers = useSelector((state) => state.customers);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(startGetAllCustomers());
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [customers]);
-
   useEffect(() => {
     dispatch(startGetAllCustomers());
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [customers]);
 
   return (
     <>

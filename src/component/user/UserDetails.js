@@ -42,6 +42,9 @@ function UserDetails() {
                     Email : {userInfo.email}
                   </li>
                   <li className="list-group-item col-12">
+                    Address : {userInfo.address}
+                  </li>
+                  <li className="list-group-item col-12">
                     Created : {userInfo.createdAt}
                   </li>
                 </ul>
