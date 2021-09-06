@@ -12,7 +12,7 @@ function UserDetails() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log("userAccountDetails", userInfo);
+  // console.log("userAccountDetails", userInfo);
   return (
     <div className="container">
       <div className="text-center">
