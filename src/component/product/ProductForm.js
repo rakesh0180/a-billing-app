@@ -12,7 +12,7 @@ import FormikControl from "../formikHelper/FormikControl";
 function CustomerForm(props) {
   const { formType, product, onHide } = props;
   const dispatch = useDispatch();
-  console.log("product", product);
+  // console.log("product", product);
 
   const initialValues = {
     name: "",
@@ -87,7 +87,7 @@ function CustomerForm(props) {
               initialValues={initialValues}
               validationSchema={validationSchema}
               onSubmit={(formData, onSubmitProps) => {
-                console.log("formData", formData);
+                // console.log("formData", formData);
                 dispatch(startAddProduct(formData, onSubmitProps));
               }}
             >
