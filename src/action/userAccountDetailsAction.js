@@ -5,10 +5,10 @@ export const startGetUserAccountDetails = () => {
     try {
       const response = await axios.get("/users/account");
       const result = response.data;
-      console.log("userAccountDetails", result);
+      // console.log("userAccountDetails", result);
       dispatch(addUserInfo(result));
     } catch (error) {
-      console.log("userAccountDetails", error.message);
+      alert(error.message);
     }
   };
 };
