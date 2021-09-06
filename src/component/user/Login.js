@@ -24,8 +24,8 @@ const Login = (props) => {
   }, [serverErrors]);
 
   const initialValues = {
-    email: "abc123@gmail.com",
-    password: "1234567890",
+    email: "",
+    password: "",
   };
 
   const validationSchema = Yup.object({
@@ -143,10 +143,12 @@ const Login = (props) => {
                   </div>
                 </div>
                 <div className="text-center">
-                  <h5 className="text-danger">Note:</h5>
-                  <h5 className="text-danger">
+                  <h6 className="text-danger">Note:</h6>
+                  <h6 className="text-danger">
                     for demo email and password was initialized
-                  </h5>
+                  </h6>
+                  <h5>Email:abc123@gmail.com</h5>
+                  <h5>password:1234567890</h5>
                 </div>
               </div>
             </div>
