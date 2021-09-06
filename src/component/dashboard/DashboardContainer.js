@@ -22,7 +22,7 @@ function DashboardContainer() {
 
   return (
     <div type="row mt-5">
-      <div className="text-center">
+      <div className="text-center mt-5">
         <h4>Dashboard</h4>
       </div>
 
