@@ -1,4 +1,5 @@
 import React from "react";
+import { BiRupee } from "react-icons/bi";
 
 function BillItem(props) {
   const {
@@ -16,7 +17,10 @@ function BillItem(props) {
       <td>{dateFormatter(bill.date)}</td>
       <td>{findCustomer(bill.customer, customers).name}</td>
       <td>{findCustomer(bill.customer, customers).mobile}</td>
-      <td>{bill.total}</td>
+      <td>
+        <BiRupee />
+        {bill.total}
+      </td>
       <td>
         <button
           className="btn btn-primary text-center"
