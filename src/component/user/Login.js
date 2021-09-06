@@ -24,8 +24,8 @@ const Login = (props) => {
   }, [serverErrors]);
 
   const initialValues = {
-    email: "",
-    password: "",
+    email: "abc123@gmail.com",
+    password: "1234567890",
   };
 
   const validationSchema = Yup.object({
