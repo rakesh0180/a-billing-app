@@ -10,7 +10,7 @@ import App from "./App";
 import configStore from "./store/configStore";
 
 const store = configStore();
-if (localStorage.getItem("token")) {
+if (localStorage.getItem("loginToken")) {
   store.dispatch(startGetUserAccountDetails());
   store.dispatch(startGetAllCustomers());
   store.dispatch(startGetAllProducts());
@@ -22,12 +22,6 @@ if (localStorage.getItem("token")) {
 store.subscribe(() => {
   console.log("store", store.getState());
 });
-if (localStorage.hasOwnProperty("loginToken")) {
-  store.dispatch(asyncGetAccDetails());
-  store.dispatch(asyncGetProducts());
-  store.dispatch(asyncGetCustomers());
-  store.dispatch(asyncGetBills());
-}
 
 ReactDOM.render(
   <Provider store={store}>
