@@ -24,6 +24,10 @@ const BillProduct = (props) => {
     }
   }, [modalShow]);
 
+  const gstAmount = (total * 18) / 100;
+
+  const GrandTotal = gstAmount + total;
+
   const productNames = products.map((ele) => ele.name);
 
   const handleAutoFill = (e, index) => {
@@ -166,11 +170,25 @@ const BillProduct = (props) => {
         );
       })}
       <div className="row  my-4 mx-4 col-12 col-sm-12 justify-content-end  align-items-center">
-        <label className="mx-2 my-1 col-12  col-sm-12">Total</label>
+        <label className="mx-2 my-1 col-12  col-sm-12">SubTotal</label>
         <input
           className="form-control col-12  col-sm-12 justify-content-center"
           type="text"
           value={total}
+          disabled={true}
+        />
+        <label className="mx-2 my-1 col-12  col-sm-12">Gst 18%</label>
+        <input
+          className="form-control col-12  col-sm-12 justify-content-center"
+          type="text"
+          value={gstAmount}
+          disabled={true}
+        />
+        <label className="mx-2 my-1 col-12  col-sm-12">Grand Total</label>
+        <input
+          className="form-control col-12  col-sm-12 justify-content-center"
+          type="text"
+          value={GrandTotal}
           disabled={true}
         />
       </div>
