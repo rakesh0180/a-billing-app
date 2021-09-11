@@ -122,13 +122,12 @@ function Navbar(props) {
                     Logout
                   </nav.Nav.Link>
                   <nav.Nav.Link className="nav-item " as={Link} to="#">
-                    <>
-                      <IoLanguage
-                        className="bx bx-fw fa-2x "
-                        style={{ color: "#ff8b01" }}
-                      ></IoLanguage>
-                      <div id="google_translate_element"></div>
-                    </>
+                    <div id="google_translate_element"></div>
+
+                    <IoLanguage
+                      className="bx bx-fw fa-2x "
+                      style={{ color: "#ff8b01" }}
+                    ></IoLanguage>
                   </nav.Nav.Link>
                 </>
               )}
