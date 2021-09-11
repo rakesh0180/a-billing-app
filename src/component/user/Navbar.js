@@ -107,6 +107,7 @@ function Navbar(props) {
                     <i className="bx bx-fw bx-user bx-tada-hover fa-3x "></i>
                     User
                   </nav.Nav.Link>
+
                   <nav.Nav.Link
                     className="nav-item"
                     as={Link}
@@ -121,13 +122,17 @@ function Navbar(props) {
                     <i className="bx bx-fw bxs-left-arrow-circle bx-fade-left-hover  fa-3x "></i>
                     Logout
                   </nav.Nav.Link>
-                  <nav.Nav.Link className="nav-item " as={Link} to="#">
-                    <div id="google_translate_element"></div>
 
+                  <nav.Nav.Link className="nav-item " as={Link} to="#">
                     <IoLanguage
                       className="bx bx-fw fa-2x "
                       style={{ color: "#ff8b01" }}
                     ></IoLanguage>
+                    <div id="google_translate_element"></div>
+                  </nav.Nav.Link>
+
+                  <nav.Nav.Link className="nav-item " as={Link} to="#">
+                    <div className="i" style={{ margin: "5px" }}></div>
                   </nav.Nav.Link>
                 </>
               )}
