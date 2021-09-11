@@ -56,6 +56,7 @@ const BillContainer = (props) => {
             handleInvoice={handleInvoice}
             handleDelete={handleDelete}
           />
+
           <Invoice
             customer={customerDetails.customer}
             date={customerDetails.date}
