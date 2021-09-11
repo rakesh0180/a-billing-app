@@ -64,21 +64,21 @@ const SignUp = (props) => {
           {(formik) => {
             // console.log(formik);
             return (
-              <div class="wrapper">
+              <div className="wrapper">
                 <div
-                  class="
+                  className="
           section-authentication-register
           d-flex
           align-items-center
           justify-content-center
         "
                 >
-                  <div class="row">
-                    <div class="col-12 col-lg-10 mx-auto">
-                      <div class="card radius-15">
-                        <div class="row no-gutters">
-                          <div class="col-lg-6">
-                            <div class="card-body p-md-5">
+                  <div className="row">
+                    <div className="col-12 col-lg-10 mx-auto">
+                      <div className="card radius-15">
+                        <div className="row no-gutters">
+                          <div className="col-lg-6">
+                            <div className="card-body p-md-5">
                               <div className="text-center">
                                 <h3 className="mt-4 fw-bold mb-3">
                                   Create an Account
@@ -142,10 +142,10 @@ const SignUp = (props) => {
                               </Form>
                             </div>
                           </div>
-                          <div class="col-lg-6">
+                          <div className="col-lg-6">
                             <img
                               src={registerImage}
-                              class="card-img login-img h-100"
+                              className="card-img login-img h-100"
                               alt="..."
                             />
                           </div>

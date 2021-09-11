@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 const BillProduct = (props) => {
   const products = useSelector((state) => state.products);
+  console.log(products);
   const [productDetails, setProductDetails] = useState([
     { id: "", name: "", quantity: "", subTotal: "" },
   ]);
@@ -126,8 +127,24 @@ const BillProduct = (props) => {
                     onChange={(e) => handleChange(e, i)}
                   />
                 </Hint>
+
+                {/* <select
+                  className="form-control"
+                  value={ele.name}
+                  onBlur={(e) => handleAutoFill(e, i)}
+                  onChange={(e) => handleChange(e, i)}
+                >
+                  <option value="">select your product</option>
+                  {products.sort().map((product) => {
+                    return (
+                      <option key={product._id} value={product.name}>
+                        {product.name}
+                      </option>
+                    );
+                  })}
+                </select> */}
               </div>
-              <div className="col-12      col-sm-12   col-md-4 col-lg-4 col-xl-4">
+              <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <input
                   className="form-control"
                   type="number"
@@ -147,13 +164,15 @@ const BillProduct = (props) => {
                   disabled={true}
                 />
               </div>
-              <div className="col-12      col-sm-12  col-md-2 col-lg-2 col-xl-2">
+              <div className="col-12 col-sm-12  col-md-2 col-lg-2 col-xl-2">
                 {productDetails.length > 1 && (
                   <button
                     className="btn btn-danger"
                     onClick={() => handleRemoveLineItem(i)}
                   >
-                    <MdIndeterminateCheckBox style={{ fontSize: "16px" }} />
+                    <MdIndeterminateCheckBox
+                      style={{ fontSize: "16px", color: "white" }}
+                    />
                   </button>
                 )}
                 {i === productDetails.length - 1 && (
@@ -161,7 +180,7 @@ const BillProduct = (props) => {
                     className="btn btn-success ml-3 "
                     onClick={handleAddLineItem}
                   >
-                    <MdAddBox />
+                    <MdAddBox style={{ fontSize: "16px", color: "white" }} />
                   </button>
                 )}
               </div>
@@ -170,23 +189,25 @@ const BillProduct = (props) => {
         );
       })}
       <div className="row  my-4 mx-4 col-12 col-sm-12 justify-content-end  align-items-center">
-        <label className="mx-2 my-1 col-12  col-sm-12">SubTotal</label>
+        <label className="mx-2 my-1 col-12  col-sm-12 col-lg-4">SubTotal</label>
         <input
-          className="form-control col-12  col-sm-12 justify-content-center"
+          className="form-control col-12  col-sm-12 col-lg-4 justify-content-center"
           type="text"
           value={total}
           disabled={true}
         />
-        <label className="mx-2 my-1 col-12  col-sm-12">Gst 18%</label>
+        <label className="mx-2 my-1 col-12  col-sm-12 col-lg-4">Gst 18%</label>
         <input
-          className="form-control col-12  col-sm-12 justify-content-center"
+          className="form-control col-12  col-sm-12 col-lg-4 justify-content-center "
           type="text"
           value={gstAmount}
           disabled={true}
         />
-        <label className="mx-2 my-1 col-12  col-sm-12">Grand Total</label>
+        <label className="mx-2 my-1 col-12  col-sm-12 col-lg-4">
+          Grand Total
+        </label>
         <input
-          className="form-control col-12  col-sm-12 justify-content-center"
+          className="form-control col-12  col-sm-12 col-lg-4 justify-content-center"
           type="text"
           value={GrandTotal}
           disabled={true}

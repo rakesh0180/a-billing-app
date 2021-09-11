@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Hint } from "react-autocomplete-hint";
 import { useDispatch, useSelector } from "react-redux";
-import { withRouter } from "react-router";
 import swal from "sweetalert";
 import { startCreateBill } from "../../action/billAction";
 import BillProduct from "./BillProduct";
@@ -28,7 +27,7 @@ const BillBody = (props) => {
       setId(customer._id);
       setName(customer.name);
     } else {
-      alert("customer does not exist");
+      swal("customer does not exist");
       setMobile("");
       props.history.push("/customer");
     }
@@ -112,4 +111,4 @@ const BillBody = (props) => {
   );
 };
 
-export default withRouter(BillBody);
+export default BillBody;
