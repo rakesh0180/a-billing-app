@@ -212,9 +212,9 @@ const Invoice = (props) => {
         </Modal.Body>
 
         <Modal.Footer>
-          <div class="notices text-left ">
+          <div className="notices text-left ">
             <div className="text-danger">NOTICE:</div>
-            <div class="notice text-center">
+            <div className="notice text-center">
               Invoice was created on a computer and is valid without the
               signature and seal.
             </div>

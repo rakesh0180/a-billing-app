@@ -11,7 +11,7 @@ function BillList(props) {
   } = props;
   return (
     <div className=" col col-12  col-sm-12 col-md-12 col-lg-12 col-xl-11">
-      <div class="text-center">
+      <div className="text-center">
         <h4>
           <center> Manage Your Bills</center>
         </h4>
@@ -26,7 +26,7 @@ function BillList(props) {
                 <th scope="col">Customer Name</th>
                 <th scope="col">Mobile</th>
                 <th scope="col">Total</th>
-                <th scope="col" colspan="2" className="text-center">
+                <th scope="col" colspan="2" classNameName="text-center">
                   Action
                 </th>
               </tr>

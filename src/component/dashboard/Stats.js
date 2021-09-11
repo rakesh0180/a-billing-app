@@ -14,7 +14,7 @@ const Stats = (props) => {
           className="mb-2"
         >
           <Card.Body>
-            <div class="widgets-icons mx-auto rounded-circle bg-white">
+            <div className="widgets-icons mx-auto rounded-circle bg-white">
               {icon}
             </div>
             <Card.Title style={{ fontSize: "30px", paddingTop: "10px" }}>

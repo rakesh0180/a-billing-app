@@ -3,18 +3,28 @@ import { useDispatch } from "react-redux";
 import { Redirect, Switch } from "react-router-dom";
 import { setUserLoginStatus } from "./action/userLoginStatusAction";
 import "./App.css";
-import BillContainer from "./component/bill/BillContainer";
-import BillSubContainer from "./component/bill/BillSubContainer";
-import CustomerContainer from "./component/customer/CustomerContainer";
-import DashboardContainer from "./component/dashboard/DashboardContainer";
-import ProductContainer from "./component/product/ProductContainer";
-import Home from "./component/user/Home";
-import Login from "./component/user/Login";
-import Navbar from "./component/user/Navbar";
-import PrivateRoute from "./component/user/PrivateRoute";
-import PublicRoute from "./component/user/PublicRoute";
-import Signup from "./component/user/Signup";
-import UserDetails from "./component/user/UserDetails";
+const BillSubContainer = React.lazy(() =>
+  import("./component/bill/BillSubContainer")
+);
+const CustomerContainer = React.lazy(() =>
+  import("./component/customer/CustomerContainer")
+);
+const DashboardContainer = React.lazy(() =>
+  import("./component/dashboard/DashboardContainer")
+);
+const ProductContainer = React.lazy(() =>
+  import("./component/product/ProductContainer")
+);
+const Home = React.lazy(() => import("./component/user/Home"));
+const Login = React.lazy(() => import("./component/user/Login"));
+const Navbar = React.lazy(() => import("./component/user/Navbar"));
+const PrivateRoute = React.lazy(() => import("./component/user/PrivateRoute"));
+const PublicRoute = React.lazy(() => import("./component/user/PublicRoute"));
+const Signup = React.lazy(() => import("./component/user/Signup"));
+const UserDetails = React.lazy(() => import("./component/user/UserDetails"));
+const BillContainer = React.lazy(() =>
+  import("./component/bill/BillContainer")
+);
 
 function App() {
   const dispatch = useDispatch();
