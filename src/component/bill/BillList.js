@@ -27,7 +27,7 @@ function BillList(props) {
                 <th scope="col">Customer Name</th>
                 <th scope="col">Mobile</th>
                 <th scope="col">Total</th>
-                <th scope="col" colspan="2" classNameName="text-center">
+                <th scope="col" colspan="2" className="text-center">
                   Action
                 </th>
               </tr>

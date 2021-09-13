@@ -1,10 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { startGetAllProducts } from "../../action/ProductAction";
 import ProductItem from "./ProductItem";
 
 const ProductList = () => {
-  const products = useSelector((state) => state.products);
+  const products = useSelector((state) => {
+    return state.products;
+  });
+  const [filterProducts, setFilterProducts] = useState([]);
+  console.log("filterProducts", filterProducts);
+
+  // eslint-disable-next-line array-callback-return
+  const filter = products.filter((product) => {
+    if (product.name.length > 1) return product;
+  });
+  setFilterProducts(filter);
+  console.log("filterProducts", filterProducts);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(startGetAllProducts());

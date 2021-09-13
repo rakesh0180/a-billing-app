@@ -7,6 +7,7 @@ import { startGetAllCustomers } from "./action/customerAction";
 import { startGetAllProducts } from "./action/ProductAction";
 import { startGetUserAccountDetails } from "./action/userAccountDetailsAction";
 import App from "./App";
+import "./App.css";
 import configStore from "./store/configStore";
 
 const store = configStore();
@@ -28,9 +29,9 @@ ReactDOM.render(
     <BrowserRouter>
       <Suspense
         fallback={
-          <div class="text-center">
-            <div class="spinner-border" role="status">
-              <span class="sr-only">Loading...</span>
+          <div className="d-flex h-100  align-items-center justify-content-center ">
+            <div className="spinner-border " role="status">
+              <span className="sr-only">Loading...</span>
             </div>
           </div>
         }

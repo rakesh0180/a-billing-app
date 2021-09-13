@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Redirect, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { setUserLoginStatus } from "./action/userLoginStatusAction";
 import "./App.css";
+import NotFound from "./component/user/NotFound";
 const BillSubContainer = React.lazy(() =>
   import("./component/bill/BillSubContainer")
 );
@@ -67,7 +68,7 @@ function App() {
             exact={true}
           />
           <PrivateRoute path="/bill" component={BillContainer} exact={true} />
-          <Redirect to="not-found" />
+          <Route component={NotFound} />
         </Switch>
       </div>
     </>
