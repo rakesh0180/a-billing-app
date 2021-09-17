@@ -16,8 +16,8 @@ function UserDetails() {
   return (
     <div className="container">
       <div className="text-center">
-        <h3 className="mt-4 fw-bold mb-3">Create an Account</h3>
-        <h6 className="mb-0 fw-bold text-uppercase">User details</h6>
+        {/* <h3 className="mt-4 fw-bold mb-3">Create an Account</h3> */}
+        <h3 className="mt-4 fw-bold mb-3text-uppercase">User details</h3>
       </div>
       <hr />
       <div
